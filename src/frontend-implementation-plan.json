@@ -1,0 +1,352 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Aparna Natural Millets Producer Co. Ltd. - Professional Company Website",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create Hero/Home section with company branding and project headline",
+      "acceptanceCriteria": [
+        "Hero section displays company name prominently",
+        "Tagline is visible and well-positioned",
+        "Includes engaging headline about the processing unit project"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create Hero component featuring company name 'Aparna Natural Millets Producer Co. Ltd.', tagline 'Powered by Farmers. Trusted by Families.', and headline about 1 TPD Millet Processing Unit in Rayagada, Odisha. Wire generated hero background image from frontend/public/assets/generated/hero-bg.dim_1920x800.png as background. Use warm earthy color overlays consistent with agricultural theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render Hero component at the top of the main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build About the Company section explaining cooperative model and mission alignment",
+      "acceptanceCriteria": [
+        "Section explains the farmer-owned cooperative structure",
+        "Mentions alignment with OMM and PMFME schemes",
+        "Describes mission to empower tribal farmers and enhance nutrition"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AboutCompany.tsx",
+          "operation": "create",
+          "description": "Create AboutCompany component explaining farmer-owned cooperative model, alignment with Odisha Millets Mission (OMM) and PMFME scheme, and mission to empower tribal farmers in Rayagada while enhancing nutrition. Wire generated farmers cooperative icon from frontend/public/assets/generated/farmers-coop-icon.dim_200x200.png as decorative element."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render AboutCompany component in main application view after Hero section"
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Create Project Vision & Core Objectives section with three main objectives",
+      "acceptanceCriteria": [
+        "Vision statement is clearly displayed",
+        "All three core objectives are presented with their descriptions",
+        "Specific details like 500+ FPC members and target programs (ICDS, MDM) are included"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ProjectVision.tsx",
+          "operation": "create",
+          "description": "Create ProjectVision component presenting vision statement and three core objectives: Assured Procurement (transparent procurement at fairer prices for 500+ FPC members), Post-harvest Loss Reduction (primary and secondary processing to reduce losses), and Nutrition & Supply (manufacture high-quality millet products for ICDS, Mid-Day Meals, tribal hostels). Wire generated icons from frontend/public/assets/generated/procurement-icon.dim_200x200.png, frontend/public/assets/generated/loss-reduction-icon.dim_200x200.png, and frontend/public/assets/generated/nutrition-icon.dim_200x200.png for each objective."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render ProjectVision component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build Why Rayagada section explaining local context and social impact",
+      "acceptanceCriteria": [
+        "Explains Rayagada's role as a millet producer",
+        "Describes current market inefficiencies",
+        "Details benefits of local value-add processing",
+        "Shows projected social impact with specific beneficiary numbers"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WhyRayagada.tsx",
+          "operation": "create",
+          "description": "Create WhyRayagada component explaining Rayagada as leading producer of Ragi and minor millets, current market challenges with intermediaries, benefits of local processing to retain value in district, and projected social impact reaching 500+ direct farmer beneficiaries and thousands of consumers through institutional procurement"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render WhyRayagada component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create Technical Specifications section showcasing 1 TPD processing design",
+      "acceptanceCriteria": [
+        "All four main processing components are described with their functions",
+        "Technical details about each stage are included",
+        "Mentions ancillary systems (cold storage, quality lab)",
+        "Notes modular expansion capability to 2-3 TPD"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/TechnicalSpecs.tsx",
+          "operation": "create",
+          "description": "Create TechnicalSpecs component showcasing 1 TPD processing design with four key components: Pre-cleaning & Grading (multi-stage aspiration and sieving), De-huller & Destoner (efficient de-hulling with integrated destoner), Pulverizer (variable gap pulverizer for coarse and fine flours), and Roaster & Automatic Packaging (controlled roasting with automated weighing and pouch sealing). Include ancillary systems details and modular expansion plans to 2-3 TPD. Wire generated processing equipment illustration from frontend/public/assets/generated/processing-equipment.dim_800x600.png."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render TechnicalSpecs component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build Financial Overview section with project costs and revenue projections",
+      "acceptanceCriteria": [
+        "Total project cost is clearly stated",
+        "All funding sources are listed with amounts",
+        "Year 1 revenue and profit projections are displayed",
+        "Financial information is presented in a professional, digestible format"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/FinancialOverview.tsx",
+          "operation": "create",
+          "description": "Create FinancialOverview component presenting Total Project Cost (₹1.15 Crore), Means of Finance breakdown (Bank Loan: ₹70.00 Lakhs, Promoter Contribution: ₹4.75 Lakhs, PMFME Subsidy 35%: ₹40.25 Lakhs), and Year 1 projections (Revenue: ₹1.50 Crore, Net Profit: ₹35 Lakhs). Use professional card-based layout for financial data presentation"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render FinancialOverview component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create Social & Economic Impact section highlighting employment, livelihoods, and nutrition",
+      "acceptanceCriteria": [
+        "All three impact areas are clearly presented",
+        "Specific numbers (15 jobs, 500+ farmers) are included",
+        "Nutrition and food security benefits are explained",
+        "Impact on tribal communities is emphasized"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SocialImpact.tsx",
+          "operation": "create",
+          "description": "Create SocialImpact component highlighting three impact areas: Employment & Inclusion (15 direct jobs for local tribal youth and women), Farmer Livelihoods & Income (increased incomes through assured procurement for 500+ member base), and Nutrition & Local Food Security (supplying hygienic milled millet products to ICDS and MDM to address anemia and child nutrition)"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render SocialImpact component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build Market Strategy section presenting B2G, B2B, and B2C channels",
+      "acceptanceCriteria": [
+        "All three market channels (B2G, B2B, B2C) are described",
+        "Target buyers and product SKUs for each channel are specified",
+        "Brand 'Aparna Millets' consumer positioning is explained",
+        "Sustainability levers are mentioned"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/MarketStrategy.tsx",
+          "operation": "create",
+          "description": "Create MarketStrategy component presenting three channels: B2G (Institutional Offtake to ICDS, Mid-Day Meals, Tribal Hostels), B2B (Retail & Mission Outlets including Odisha Millets Mission outlets and cooperative stores with 25kg bulk SKUs), and B2C (Brand 'Aparna Millets' with 1kg retail SKUs, local-language labeling, and digital outreach targeting health-conscious urban buyers in Odisha). Wire generated products showcase illustration from frontend/public/assets/generated/products-showcase.dim_800x500.png."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render MarketStrategy component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create Value Chain Process section illustrating end-to-end workflow with KPI targets",
+      "acceptanceCriteria": [
+        "All five value chain stages are presented in sequence",
+        "Each stage's function is described",
+        "Year 1 operational KPI targets are displayed",
+        "Visual or structured flow representation of the process"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ValueChain.tsx",
+          "operation": "create",
+          "description": "Create ValueChain component illustrating end-to-end workflow with five stages: Aggregation (farmer collection and scheduled procurement), Cleaning (primary cleaning to reduce contamination), Processing (de-hulling, milling and roasting operations), and Dispatch (packaging, quality checks and delivery). Include operational KPI targets for Year 1: procurement coverage for 500 members, ≤5% post-harvest loss, product moisture ≤10%, and institutional delivery lead time ≤7 days. Wire generated value chain diagram from frontend/public/assets/generated/value-chain-diagram.dim_1000x600.png."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render ValueChain component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build Support Requested section with four specific requests for government and district administration",
+      "acceptanceCriteria": [
+        "All four support requests are clearly articulated",
+        "Each request is specific and actionable",
+        "Target audience (Collectorate & District Administration) is clear",
+        "Request for district-level meeting with 60-90 day timeline is included"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SupportRequested.tsx",
+          "operation": "create",
+          "description": "Create SupportRequested component addressing government and district administration with four specific requests: Administrative Guidance (facilitate PMFME subsidy clearance and verification visits), Procurement Convergence (inclusion in district procurement lists for ICDS/MDM and tribal hostels), Land & Infrastructure Assistance (help identify industrial shed or expedite clearances), and Linkages & Capacity Building (facilitate introductions to state procurement officers and training collaborations). Include request for district-level meeting with 60-90 day timeline"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render SupportRequested component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Create Conclusion & Next Steps section outlining three implementation phases",
+      "acceptanceCriteria": [
+        "All three phases are presented with timeframes",
+        "Key activities for each phase are listed",
+        "Progressive scale-up from commissioning to consolidation is clear",
+        "Phase II capacity expansion to 2-3 TPD is mentioned"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/NextSteps.tsx",
+          "operation": "create",
+          "description": "Create NextSteps component outlining three phases: Phase 1 Commissioning (0-3 months: finalize site, install machinery, recruit staff, secure PMFME subsidy), Phase 2 Operationalization (3-9 months: begin procurement cycles, achieve 70% capacity utilization, obtain institutional trial orders), and Phase 3 Scale & Consolidate (9-24 months: expand market reach, introduce fortified SKUs, pursue certification, plan Phase II capacity uplift to 2-3 TPD)"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render NextSteps component in main application view"
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Build Contact section with contact information and interactive inquiry form",
+      "acceptanceCriteria": [
+        "Contact information for Bibhuti Bhusana Mishra is displayed",
+        "Interactive contact form includes all required fields",
+        "Form is functional and can collect inquiry submissions",
+        "Contact section is easily accessible from navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "create",
+          "description": "Create ContactForm component with interactive form including fields for name, email, phone, subject/inquiry type, and message. Implement form validation and state management to collect inquiries from government officials, investors, and potential customers. Display contact information for Bibhuti Bhusana Mishra (Phone: +919437372707, Email: bibhuti4011@gmail.com)"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render ContactForm component at bottom of main application view before footer"
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Implement professional agricultural-themed visual design with warm earthy tones",
+      "acceptanceCriteria": [
+        "Color palette uses warm, earthy tones appropriate for agricultural cooperative",
+        "Design balances grassroots authenticity with professional credibility",
+        "Visual theme is consistent across all sections",
+        "Layout and typography support readability for diverse audience (officials, investors, customers)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Implement professional visual design theme with warm, earthy color palette inspired by millets and grain (amber, golden yellow, warm browns, terracotta - avoiding blue and purple). Define CSS custom properties for primary, secondary, accent colors and typography scales. Include subtle textures or patterns suggesting farmland or grain processing. Ensure design conveys grassroots authenticity and professional credibility suitable for government officials, investors, and customers"
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind configuration with custom warm earthy color palette (amber, golden, brown, terracotta tones), custom typography settings for professional readability, and responsive breakpoints. Configure theme to support agricultural heritage aesthetic while maintaining modern professional appearance"
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Create responsive navigation system and ensure mobile-responsive layout",
+      "acceptanceCriteria": [
+        "Navigation menu includes links to all major sections",
+        "Navigation is accessible and functional on all screen sizes",
+        "Website layout adapts properly to mobile and tablet viewports",
+        "All content sections are accessible and readable on smaller screens"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create Navigation component with responsive navigation menu including links to all major sections (Home, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Contact). Implement mobile hamburger menu for smaller screens and smooth scroll behavior to section anchors"
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render Navigation component at the top of the application. Add section IDs to all major components to enable smooth scroll navigation. Ensure responsive layout structure that adapts to mobile and tablet viewports"
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Ensure Hero component is fully responsive with appropriate text sizing, spacing, and background image handling for mobile and tablet screens"
+        },
+        {
+          "path": "frontend/src/components/AboutCompany.tsx",
+          "operation": "modify",
+          "description": "Ensure AboutCompany component uses responsive grid/flex layouts that stack appropriately on mobile devices"
+        },
+        {
+          "path": "frontend/src/components/ProjectVision.tsx",
+          "operation": "modify",
+          "description": "Ensure ProjectVision component objectives cards are responsive and stack vertically on mobile screens"
+        },
+        {
+          "path": "frontend/src/components/TechnicalSpecs.tsx",
+          "operation": "modify",
+          "description": "Ensure TechnicalSpecs component technical details are readable and properly formatted on smaller screens"
+        },
+        {
+          "path": "frontend/src/components/FinancialOverview.tsx",
+          "operation": "modify",
+          "description": "Ensure FinancialOverview component financial cards stack and display properly on mobile devices"
+        },
+        {
+          "path": "frontend/src/components/MarketStrategy.tsx",
+          "operation": "modify",
+          "description": "Ensure MarketStrategy component market channels display appropriately on mobile and tablet viewports"
+        },
+        {
+          "path": "frontend/src/components/ValueChain.tsx",
+          "operation": "modify",
+          "description": "Ensure ValueChain component diagram and workflow stages are viewable and scrollable on mobile devices"
+        },
+        {
+          "path": "frontend/src/components/ContactForm.tsx",
+          "operation": "modify",
+          "description": "Ensure ContactForm component form fields and layout are mobile-friendly with appropriate touch targets and input sizing"
+        }
+      ]
+    }
+  ]
+}

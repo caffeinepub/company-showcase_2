@@ -1,0 +1,19 @@
+{
+  "frontend/src/App.tsx": "Main application component that orchestrates all sections of the Aparna Natural Millets website, rendering Navigation, Hero, and all content sections in sequence with Footer.",
+  "frontend/src/components/Navigation.tsx": "Responsive navigation component with smooth scroll functionality to all sections, featuring mobile hamburger menu and sticky header with scroll-based styling.",
+  "frontend/src/components/Hero.tsx": "Hero section featuring company name, tagline \"Powered by Farmers. Trusted by Families.\", project headline, and CTA buttons with background image from generated assets.",
+  "frontend/src/components/AboutCompany.tsx": "About section explaining the farmer-owned cooperative model, alignment with OMM and PMFME schemes, and mission to empower tribal farmers with visual icons.",
+  "frontend/src/components/ProjectVision.tsx": "Project vision section displaying the overarching vision statement and three core objectives (Assured Procurement, Post-harvest Loss Reduction, Nutrition & Supply) with icons.",
+  "frontend/src/components/WhyRayagada.tsx": "Section explaining Rayagada's context as a millet producer, current market challenges, benefits of local processing, and projected social impact reaching 500+ farmers.",
+  "frontend/src/components/TechnicalSpecs.tsx": "Technical specifications section showcasing the 1 TPD processing design with four key components, processing equipment image, and ancillary systems details.",
+  "frontend/src/components/FinancialOverview.tsx": "Financial overview section presenting total project cost (₹1.15 Crore), funding sources breakdown, Year 1 projections, and key financial assumptions in card-based layout.",
+  "frontend/src/components/SocialImpact.tsx": "Social and economic impact section highlighting three areas: Employment (15 jobs), Farmer Livelihoods (500+ farmers), and Nutrition & Food Security benefits.",
+  "frontend/src/components/MarketStrategy.tsx": "Market strategy section presenting three channels (B2G Institutional, B2B Retail, B2C Brand) with products showcase image and sustainability levers.",
+  "frontend/src/components/ValueChain.tsx": "Value chain process section illustrating end-to-end workflow with four stages, value chain diagram image, and Year 1 operational KPI targets.",
+  "frontend/src/components/SupportRequested.tsx": "Support requested section addressing government and district administration with four specific requests and call for district-level meeting within 60-90 days.",
+  "frontend/src/components/NextSteps.tsx": "Conclusion and next steps section outlining three implementation phases (Commissioning, Operationalization, Scale & Consolidate) with timeframes and activities.",
+  "frontend/src/components/ContactForm.tsx": "Contact section with company contact information and interactive inquiry form featuring name, email, phone, inquiry type, and message fields with toast notifications.",
+  "frontend/src/components/Footer.tsx": "Footer component with company information, quick links, contact details, and attribution to caffeine.ai with UTM tracking parameters.",
+  "frontend/src/index.css": "Global styles with warm earthy OKLCH color system (golden amber, terracotta, warm browns) for both light and dark modes, avoiding blue and purple tones.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with warm agricultural color palette, custom font families, and design tokens matching the earthy millet theme."
+}

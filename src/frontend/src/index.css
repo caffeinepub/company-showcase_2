@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* Warm earthy color palette inspired by millets and grain */
+        /* Light mode - warm golden and amber tones */
+        --background: 0.98 0.01 45;  /* Warm off-white with slight golden hue */
+        --foreground: 0.25 0.02 40;  /* Deep warm brown */
+        
+        --card: 1 0 0;  /* Pure white for cards */
+        --card-foreground: 0.25 0.02 40;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.02 40;
+        
+        --primary: 0.55 0.15 45;  /* Rich golden amber */
+        --primary-foreground: 0.98 0.01 45;  /* Light text on primary */
+        
+        --secondary: 0.92 0.03 50;  /* Soft wheat/cream */
+        --secondary-foreground: 0.30 0.03 40;
+        
+        --muted: 0.94 0.02 50;  /* Light warm beige */
+        --muted-foreground: 0.50 0.03 40;  /* Medium warm brown */
+        
+        --accent: 0.70 0.12 35;  /* Terracotta/clay accent */
+        --accent-foreground: 0.98 0.01 45;
+        
+        --destructive: 0.55 0.22 25;  /* Warm red-brown */
+        --destructive-foreground: 0.98 0.01 45;
+        
+        --border: 0.88 0.02 45;  /* Subtle warm border */
+        --input: 0.88 0.02 45;
+        --ring: 0.55 0.15 45;  /* Primary color for focus rings */
+        
+        --chart-1: 0.60 0.15 45;
+        --chart-2: 0.65 0.12 35;
+        --chart-3: 0.50 0.10 55;
+        --chart-4: 0.70 0.14 40;
+        --chart-5: 0.55 0.18 30;
+    }
+
+    .dark {
+        /* Dark mode - deep earthy tones with warm accents */
+        --background: 0.20 0.02 40;  /* Deep warm brown */
+        --foreground: 0.95 0.01 45;  /* Warm off-white */
+        
+        --card: 0.25 0.02 40;  /* Slightly lighter than background */
+        --card-foreground: 0.95 0.01 45;
+        
+        --popover: 0.25 0.02 40;
+        --popover-foreground: 0.95 0.01 45;
+        
+        --primary: 0.70 0.15 45;  /* Bright golden amber */
+        --primary-foreground: 0.20 0.02 40;  /* Dark text on primary */
+        
+        --secondary: 0.30 0.03 40;  /* Dark warm brown */
+        --secondary-foreground: 0.95 0.01 45;
+        
+        --muted: 0.30 0.03 40;  /* Dark muted brown */
+        --muted-foreground: 0.70 0.02 45;  /* Light warm text */
+        
+        --accent: 0.60 0.12 35;  /* Warm terracotta */
+        --accent-foreground: 0.95 0.01 45;
+        
+        --destructive: 0.60 0.20 25;  /* Warm red */
+        --destructive-foreground: 0.95 0.01 45;
+        
+        --border: 0.35 0.02 40;  /* Subtle dark border */
+        --input: 0.35 0.02 40;
+        --ring: 0.70 0.15 45;
+        
+        --chart-1: 0.65 0.15 45;
+        --chart-2: 0.70 0.12 35;
+        --chart-3: 0.55 0.10 55;
+        --chart-4: 0.75 0.14 40;
+        --chart-5: 0.60 0.18 30;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    /* Smooth scrolling for anchor links */
+    html {
+        scroll-behavior: smooth;
+    }
+}
+

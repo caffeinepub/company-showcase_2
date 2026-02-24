@@ -1,0 +1,150 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Professional company website for Aparna Natural Millets Producer Co. Ltd., a farmer-owned millet processing cooperative in Rayagada, Odisha. Multi-audience site (government officials, investors, customers) showcasing 1 TPD millet processing unit project with comprehensive sections including project vision, technical specifications, financial overview, social impact, market strategy, and contact features.",
+  "architectural_notes": [
+    "Multi-audience website design balancing formal presentation for officials/investors with customer-facing elements",
+    "Comprehensive information architecture covering corporate overview, technical specifications, financial projections, and social impact metrics",
+    "Contact form implementation for stakeholder inquiries"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Hero background showing golden millet grain fields with farmers working, conveying authenticity and agricultural heritage (hero-bg.dim_1920x800.png)\n- Illustration of millet processing equipment in clean modern facility, showing dehulling and milling machinery (processing-equipment.dim_800x600.png)\n- Icon representing farmers working together in cooperative model, simple line art style (farmers-coop-icon.dim_200x200.png)\n- Icon representing assured procurement and fair prices, showing handshake or scales (procurement-icon.dim_200x200.png)\n- Icon representing post-harvest loss reduction with grain storage imagery (loss-reduction-icon.dim_200x200.png)\n- Icon representing nutrition and health benefits with millet bowl or nutritious food (nutrition-icon.dim_200x200.png)\n- Diagram visual showing the five-stage value chain from aggregation to dispatch in flowchart style (value-chain-diagram.dim_1000x600.png)\n- Illustration of millet products: packaged flour bags and retail pouches with Aparna Millets branding (products-showcase.dim_800x500.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-hero-home-section-featuring-the-company-name-aparna-natural-millets-producer-co-ltd-tagline-powered-by-farmers-trusted-by-families-and-a-compelling-headline-about-the-1-tpd-millet-processing-unit-project-in-rayagada-odisha",
+      "title": "Create a Hero/Home section featuring the company name 'Aparna Natural Millets Producer Co. Ltd.', tagline 'Powered by Farmers. Trusted by Families.', and a compelling headline about the 1 TPD Millet Processing Unit project in Rayagada, Odisha",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-about-the-company-section-explaining-the-farmer-owned-cooperative-model-alignment-with-odisha-millets-mission-omm-and-pmfme-scheme-and-the-mission-to-empower-tribal-farmers-while-enhancing-nutrition-in-rayagada",
+      "title": "Build an About the Company section explaining the farmer-owned cooperative model, alignment with Odisha Millets Mission (OMM) and PMFME scheme, and the mission to empower tribal farmers while enhancing nutrition in Rayagada",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-project-vision-core-objectives-section-presenting-the-vision-statement-and-three-core-objectives-assured-procurement-transparent-procurement-at-fairer-prices-for-500-fpc-members-post-harvest-loss-reduction-primary-and-secondary-processing-to-reduce-losses-and-increase-marketable-value-and-nutrition-supply-manufacture-high-quality-millet-products-for-icds-mid-day-meals-and-tribal-hostels",
+      "title": "Create a Project Vision & Core Objectives section presenting the vision statement and three core objectives: Assured Procurement (transparent procurement at fairer prices for 500+ FPC members), Post-harvest Loss Reduction (primary and secondary processing to reduce losses and increase marketable value), and Nutrition & Supply (manufacture high-quality millet products for ICDS, Mid-Day Meals, and tribal hostels)",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-why-rayagada-section-explaining-the-local-context-rayagada-as-a-leading-producer-of-ragi-and-minor-millets-current-market-challenges-with-intermediaries-benefits-of-local-processing-to-retain-value-in-the-district-and-projected-social-impact-reaching-500-direct-farmer-beneficiaries-and-thousands-of-consumers-through-institutional-procurement",
+      "title": "Build a Why Rayagada section explaining the local context (Rayagada as a leading producer of Ragi and minor millets), current market challenges with intermediaries, benefits of local processing to retain value in the district, and projected social impact reaching 500+ direct farmer beneficiaries and thousands of consumers through institutional procurement",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-technical-specifications-section-showcasing-the-1-tpd-processing-design-with-four-key-components-pre-cleaning-grading-multi-stage-aspiration-and-sieving-de-huller-destoner-efficient-de-hulling-with-integrated-destoner-pulverizer-variable-gap-pulverizer-for-coarse-and-fine-flours-and-roaster-automatic-packaging-controlled-roasting-with-automated-weighing-and-pouch-sealing-include-details-about-ancillary-systems-and-modular-expansion-plans-to-2-3-tpd",
+      "title": "Create a Technical Specifications section showcasing the 1 TPD processing design with four key components: Pre-cleaning & Grading (multi-stage aspiration and sieving), De-huller & Destoner (efficient de-hulling with integrated destoner), Pulverizer (variable gap pulverizer for coarse and fine flours), and Roaster & Automatic Packaging (controlled roasting with automated weighing and pouch sealing). Include details about ancillary systems and modular expansion plans to 2-3 TPD",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-financial-overview-section-presenting-total-project-cost-1-15-crore-means-of-finance-breakdown-bank-loan-70-00-lakhs-promoter-contribution-4-75-lakhs-pmfme-subsidy-35-40-25-lakhs-and-year-1-projections-revenue-1-50-crore-net-profit-35-lakhs",
+      "title": "Build a Financial Overview section presenting Total Project Cost (₹1.15 Crore), Means of Finance breakdown (Bank Loan: ₹70.00 Lakhs, Promoter Contribution: ₹4.75 Lakhs, PMFME Subsidy 35%: ₹40.25 Lakhs), and Year 1 projections (Revenue: ₹1.50 Crore, Net Profit: ₹35 Lakhs)",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-social-economic-impact-section-highlighting-three-areas-employment-inclusion-15-direct-jobs-for-local-tribal-youth-and-women-farmer-livelihoods-income-increased-incomes-through-assured-procurement-for-500-member-base-and-nutrition-local-food-security-supplying-hygienic-milled-millet-products-to-icds-and-mdm-to-address-anemia-and-child-nutrition",
+      "title": "Create a Social & Economic Impact section highlighting three areas: Employment & Inclusion (15 direct jobs for local tribal youth and women), Farmer Livelihoods & Income (increased incomes through assured procurement for 500+ member base), and Nutrition & Local Food Security (supplying hygienic milled millet products to ICDS and MDM to address anemia and child nutrition)",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-market-strategy-section-presenting-three-channels-b2g-institutional-offtake-to-icds-mid-day-meals-tribal-hostels-b2b-retail-mission-outlets-including-odisha-millets-mission-outlets-and-cooperative-stores-with-25kg-bulk-skus-and-b2c-brand-aparna-millets-with-1kg-retail-skus-local-language-labeling-and-digital-outreach-targeting-health-conscious-urban-buyers-in-odisha",
+      "title": "Build a Market Strategy section presenting three channels: B2G (Institutional Offtake to ICDS, Mid-Day Meals, Tribal Hostels), B2B (Retail & Mission Outlets including Odisha Millets Mission outlets and cooperative stores with 25kg bulk SKUs), and B2C (Brand 'Aparna Millets' with 1kg retail SKUs, local-language labeling, and digital outreach targeting health-conscious urban buyers in Odisha)",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-value-chain-process-section-illustrating-the-end-to-end-workflow-with-five-stages-aggregation-farmer-collection-and-scheduled-procurement-cleaning-primary-cleaning-to-reduce-contamination-processing-de-hulling-milling-and-roasting-operations-and-dispatch-packaging-quality-checks-and-delivery-include-operational-kpi-targets-for-year-1-procurement-coverage-for-500-members-5-post-harvest-loss-product-moisture-10-and-institutional-delivery-lead-time-7-days",
+      "title": "Create a Value Chain Process section illustrating the end-to-end workflow with five stages: Aggregation (farmer collection and scheduled procurement), Cleaning (primary cleaning to reduce contamination), Processing (de-hulling, milling and roasting operations), and Dispatch (packaging, quality checks and delivery). Include operational KPI targets for Year 1: procurement coverage for 500 members, ≤5% post-harvest loss, product moisture ≤10%, and institutional delivery lead time ≤7 days",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-support-requested-section-addressing-government-and-district-administration-with-four-specific-requests-administrative-guidance-facilitate-pmfme-subsidy-clearance-and-verification-visits-procurement-convergence-inclusion-in-district-procurement-lists-for-icds-mdm-and-tribal-hostels-land-infrastructure-assistance-help-identify-industrial-shed-or-expedite-clearances-and-linkages-capacity-building-facilitate-introductions-to-state-procurement-officers-and-training-collaborations",
+      "title": "Build a Support Requested section addressing government and district administration with four specific requests: Administrative Guidance (facilitate PMFME subsidy clearance and verification visits), Procurement Convergence (inclusion in district procurement lists for ICDS/MDM and tribal hostels), Land & Infrastructure Assistance (help identify industrial shed or expedite clearances), and Linkages & Capacity Building (facilitate introductions to state procurement officers and training collaborations)",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-conclusion-next-steps-section-outlining-three-phases-phase-1-commissioning-0-3-months-finalize-site-install-machinery-recruit-staff-secure-pmfme-subsidy-phase-2-operationalization-3-9-months-begin-procurement-cycles-achieve-70-capacity-utilization-obtain-institutional-trial-orders-and-phase-3-scale-consolidate-9-24-months-expand-market-reach-introduce-fortified-skus-pursue-certification-plan-phase-ii-capacity-uplift-to-2-3-tpd",
+      "title": "Create a Conclusion & Next Steps section outlining three phases: Phase 1 Commissioning (0-3 months: finalize site, install machinery, recruit staff, secure PMFME subsidy), Phase 2 Operationalization (3-9 months: begin procurement cycles, achieve 70% capacity utilization, obtain institutional trial orders), and Phase 3 Scale & Consolidate (9-24 months: expand market reach, introduce fortified SKUs, pursue certification, plan Phase II capacity uplift to 2-3 TPD)",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-contact-section-displaying-contact-information-for-bibhuti-bhusana-mishra-phone-919437372707-email-bibhuti4011-gmail-com-and-including-an-interactive-contact-form-with-fields-for-name-email-phone-subject-inquiry-type-and-message-the-form-should-allow-government-officials-investors-and-potential-customers-to-submit-inquiries",
+      "title": "Build a Contact section displaying contact information for Bibhuti Bhusana Mishra (Phone: +919437372707, Email: bibhuti4011@gmail.com) and including an interactive contact form with fields for name, email, phone, subject/inquiry type, and message. The form should allow government officials, investors, and potential customers to submit inquiries",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-professional-trustworthy-visual-design-theme-that-reflects-agricultural-heritage-cooperative-values-and-modern-processing-capabilities-use-warm-earthy-tones-avoid-blue-and-purple-inspired-by-millets-and-grain-incorporate-subtle-textures-or-patterns-suggesting-farmland-or-grain-processing-and-ensure-the-design-conveys-both-grassroots-authenticity-and-professional-credibility-suitable-for-government-officials-investors-and-customers",
+      "title": "Implement a professional, trustworthy visual design theme that reflects agricultural heritage, cooperative values, and modern processing capabilities. Use warm, earthy tones (avoid blue and purple) inspired by millets and grain, incorporate subtle textures or patterns suggesting farmland or grain processing, and ensure the design conveys both grassroots authenticity and professional credibility suitable for government officials, investors, and customers",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-responsive-navigation-system-that-allows-easy-access-to-all-major-sections-home-about-project-vision-why-rayagada-technical-specifications-financial-overview-social-impact-market-strategy-value-chain-support-requested-contact-and-ensure-the-entire-website-is-mobile-responsive-for-viewing-on-phones-and-tablets",
+      "title": "Create a responsive navigation system that allows easy access to all major sections (Home, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Contact) and ensure the entire website is mobile-responsive for viewing on phones and tablets",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Multi-section professional company website with Home/Hero, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain Process, Support Requested, and Contact sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Interactive contact form for inquiries from government officials, investors, and customers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Professional design targeting dual audience: government/investors and potential millet product customers",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Aparna Natural Millets Producer Co. Ltd. Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
