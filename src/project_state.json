@@ -1,15 +1,20 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 7,
   "summary": "Professional company website for Aparna Natural Millets Producer Co. Ltd., a farmer-owned millet processing cooperative in Rayagada, Odisha. Multi-audience site (government officials, investors, customers) showcasing 1 TPD millet processing unit project with comprehensive sections including project vision, technical specifications, financial overview, social impact, market strategy, and contact features.",
   "architectural_notes": [
     "Multi-audience website design balancing formal presentation for officials/investors with customer-facing elements",
     "Comprehensive information architecture covering corporate overview, technical specifications, financial projections, and social impact metrics",
-    "Contact form implementation for stakeholder inquiries"
+    "Contact form implementation for stakeholder inquiries",
+    "Admin control system with Internet Identity authentication for secure access",
+    "Backend content management storage using Motoko canisters to persist all editable website content",
+    "Admin dashboard route at /admin with comprehensive editing interfaces for all website sections"
   ],
-  "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Hero background showing golden millet grain fields with farmers working, conveying authenticity and agricultural heritage (hero-bg.dim_1920x800.png)\n- Illustration of millet processing equipment in clean modern facility, showing dehulling and milling machinery (processing-equipment.dim_800x600.png)\n- Icon representing farmers working together in cooperative model, simple line art style (farmers-coop-icon.dim_200x200.png)\n- Icon representing assured procurement and fair prices, showing handshake or scales (procurement-icon.dim_200x200.png)\n- Icon representing post-harvest loss reduction with grain storage imagery (loss-reduction-icon.dim_200x200.png)\n- Icon representing nutrition and health benefits with millet bowl or nutritious food (nutrition-icon.dim_200x200.png)\n- Diagram visual showing the five-stage value chain from aggregation to dispatch in flowchart style (value-chain-diagram.dim_1000x600.png)\n- Illustration of millet products: packaged flour bags and retail pouches with Aparna Millets branding (products-showcase.dim_800x500.png)",
+  "known_issues": [
+    "Deployed application shows blank page immediately on load (affects both main website and admin dashboard)",
+    "Critical deployment issue: possible build/bundle error, router misconfiguration, backend connection failure, or JavaScript initialization error"
+  ],
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-create-a-hero-home-section-featuring-the-company-name-aparna-natural-millets-producer-co-ltd-tagline-powered-by-farmers-trusted-by-families-and-a-compelling-headline-about-the-1-tpd-millet-processing-unit-project-in-rayagada-odisha",
@@ -122,6 +127,198 @@
         "REQ-14"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-dashboard-route-accessible-at-admin-with-internet-identity-authentication-integration-using-the-existing-useinternetidentity-hook",
+      "title": "Create an admin dashboard route accessible at /admin with Internet Identity authentication integration using the existing useInternetIdentity hook",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-hero-home-section-allowing-edits-to-company-name-tagline-headline-text-and-background-image-url",
+      "title": "Create admin panel content editor for Hero/Home section allowing edits to company name, tagline, headline text, and background image URL",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-about-company-section-allowing-edits-to-all-descriptive-text-about-the-cooperative-model-omm-pmfme-alignment-and-mission-statement",
+      "title": "Create admin panel content editor for About Company section allowing edits to all descriptive text about the cooperative model, OMM/PMFME alignment, and mission statement",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-project-vision-section-allowing-edits-to-vision-statement-and-all-three-core-objectives-assured-procurement-post-harvest-loss-reduction-nutrition-supply-with-their-descriptions",
+      "title": "Create admin panel content editor for Project Vision section allowing edits to vision statement and all three core objectives (Assured Procurement, Post-harvest Loss Reduction, Nutrition & Supply) with their descriptions",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-why-rayagada-section-allowing-edits-to-local-context-description-market-challenges-processing-benefits-and-social-impact-projections",
+      "title": "Create admin panel content editor for Why Rayagada section allowing edits to local context description, market challenges, processing benefits, and social impact projections",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-technical-specifications-section-allowing-edits-to-all-four-processing-components-pre-cleaning-grading-de-huller-destoner-pulverizer-roaster-packaging-ancillary-systems-description-and-expansion-plans",
+      "title": "Create admin panel content editor for Technical Specifications section allowing edits to all four processing components (Pre-cleaning & Grading, De-huller & Destoner, Pulverizer, Roaster & Packaging), ancillary systems description, and expansion plans",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-financial-overview-section-allowing-edits-to-total-project-cost-all-funding-source-amounts-bank-loan-promoter-contribution-pmfme-subsidy-with-percentage-and-year-1-projections-revenue-and-net-profit",
+      "title": "Create admin panel content editor for Financial Overview section allowing edits to total project cost, all funding source amounts (bank loan, promoter contribution, PMFME subsidy with percentage), and Year 1 projections (revenue and net profit)",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-social-economic-impact-section-allowing-edits-to-all-three-impact-areas-employment-inclusion-jobs-data-and-description-farmer-livelihoods-income-member-count-and-income-details-and-nutrition-local-food-security-program-details-and-beneficiaries",
+      "title": "Create admin panel content editor for Social & Economic Impact section allowing edits to all three impact areas: Employment & Inclusion (jobs data and description), Farmer Livelihoods & Income (member count and income details), and Nutrition & Local Food Security (program details and beneficiaries)",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-market-strategy-section-allowing-edits-to-all-three-sales-channels-b2g-institutional-b2b-retail-b2c-consumer-with-their-descriptions-and-product-details",
+      "title": "Create admin panel content editor for Market Strategy section allowing edits to all three sales channels (B2G institutional, B2B retail, B2C consumer) with their descriptions and product details",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-value-chain-section-allowing-edits-to-all-four-workflow-stages-aggregation-cleaning-processing-dispatch-and-all-operational-kpi-targets-for-year-1",
+      "title": "Create admin panel content editor for Value Chain section allowing edits to all four workflow stages (Aggregation, Cleaning, Processing, Dispatch) and all operational KPI targets for Year 1",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-support-requested-section-allowing-edits-to-all-four-support-request-types-administrative-guidance-procurement-convergence-land-infrastructure-assistance-linkages-capacity-building-with-their-descriptions",
+      "title": "Create admin panel content editor for Support Requested section allowing edits to all four support request types (Administrative Guidance, Procurement Convergence, Land & Infrastructure Assistance, Linkages & Capacity Building) with their descriptions",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-conclusion-next-steps-section-allowing-edits-to-all-three-implementation-phases-commissioning-operationalization-scale-consolidate-with-timeframes-and-activities-plus-the-closing-statement",
+      "title": "Create admin panel content editor for Conclusion & Next Steps section allowing edits to all three implementation phases (Commissioning, Operationalization, Scale & Consolidate) with timeframes and activities, plus the closing statement",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-contact-section-allowing-edits-to-contact-person-name-phone-number-email-address-and-the-contact-form-configuration",
+      "title": "Create admin panel content editor for Contact section allowing edits to contact person name, phone number, email address, and the contact form configuration",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-image-upload-functionality-in-the-admin-panel-allowing-admins-to-upload-new-images-for-any-section-with-uploaded-images-stored-as-static-assets-in-frontend-public-assets-uploaded-directory-and-their-urls-saved-to-backend-content-data",
+      "title": "Implement image upload functionality in the admin panel allowing admins to upload new images for any section, with uploaded images stored as static assets in frontend/public/assets/uploaded directory and their URLs saved to backend content data",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-frontend-section-components-hero-aboutcompany-projectvision-whyrayagada-technicalspecs-financialoverview-socialimpact-marketstrategy-valuechain-supportrequested-nextsteps-contactform-to-fetch-and-display-content-from-backend-instead-of-hardcoded-data",
+      "title": "Update all frontend section components (Hero, AboutCompany, ProjectVision, WhyRayagada, TechnicalSpecs, FinancialOverview, SocialImpact, MarketStrategy, ValueChain, SupportRequested, NextSteps, ContactForm) to fetch and display content from backend instead of hardcoded data",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-clean-intuitive-admin-dashboard-interface-with-a-navigation-sidebar-listing-all-editable-sections-organized-by-category-and-displaying-the-current-authentication-status",
+      "title": "Create a clean, intuitive admin dashboard interface with a navigation sidebar listing all editable sections, organized by category, and displaying the current authentication status",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-react-error-boundary-component-to-catch-and-display-initialization-errors-instead-of-showing-blank-page",
+      "title": "Add React error boundary component to catch and display initialization errors instead of showing blank page",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-loading-states-and-suspense-boundaries-to-prevent-blank-screens-during-data-fetching-and-route-transitions",
+      "title": "Add loading states and suspense boundaries to prevent blank screens during data fetching and route transitions",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-fallback-default-content-for-all-sections-so-pages-render-even-when-backend-connection-fails-or-returns-empty-data",
+      "title": "Add fallback default content for all sections so pages render even when backend connection fails or returns empty data",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-react-router-configuration-to-work-correctly-in-internet-computer-deployment-environment-with-proper-route-matching",
+      "title": "Fix React Router configuration to work correctly in Internet Computer deployment environment with proper route matching",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-comprehensive-error-handling-and-logging-to-backend-actor-connection-initialization-with-retry-logic",
+      "title": "Add comprehensive error handling and logging to backend actor connection initialization with retry logic",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-internet-identity-authentication-flow-to-handle-initialization-errors-gracefully-without-blocking-page-render",
+      "title": "Fix Internet Identity authentication flow to handle initialization errors gracefully without blocking page render",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-console-logging-and-diagnostics-throughout-app-initialization-to-help-identify-failure-points-in-deployment",
+      "title": "Add console logging and diagnostics throughout app initialization to help identify failure points in deployment",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-static-asset-paths-images-css-are-correctly-resolved-relative-to-deployment-base-url",
+      "title": "Ensure all static asset paths (images, CSS) are correctly resolved relative to deployment base URL",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -141,6 +338,54 @@
       "id": "AR-3",
       "summary": "Professional design targeting dual audience: government/investors and potential millet product customers",
       "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Admin dashboard with Internet Identity authentication, accessible at /admin route",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Full content management system allowing admins to edit all website sections: Hero/Home, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Conclusion, and Contact",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Image upload functionality for admin panel to update visual content across all sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Backend Motoko storage system to persist all content changes made through admin panel",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Build backend Motoko actor methods to store and retrieve complete website content data for all sections: Hero, About Company, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Conclusion/Next Steps, and Contact information",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Fix Vite build configuration to ensure proper asset bundling and base path configuration for Internet Computer deployment",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Verify and fix backend canister declarations to ensure frontend can properly communicate with deployed backend",
+      "reqIds": [
+        "REQ-41"
+      ],
       "status": "pending"
     }
   ],

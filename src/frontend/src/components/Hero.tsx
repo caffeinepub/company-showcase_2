@@ -1,7 +1,11 @@
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useGetAllContent } from '../hooks/useQueries';
+import { Skeleton } from '@/components/ui/skeleton';
 
 const Hero = () => {
+  const { data: content, isLoading, isError } = useGetAllContent();
+
   const scrollToContact = () => {
     const element = document.querySelector('#contact');
     if (element) {
@@ -9,6 +13,40 @@ const Hero = () => {
     }
   };
 
+  // Default content as fallback
+  const defaultTitle = 'Aparna Natural Millets Producer Co. Ltd.';
+  const defaultTagline = 'Powered by Farmers. Trusted by Families.';
+  const defaultContent = 'Establishment of a 1 TPD Millet Processing Unit';
+  const defaultDescription = 'Empowering Tribal Farmers & Enhancing Nutrition in Rayagada — a compact, farmer-owned millet processing unit aligned with the Odisha Millets Mission and PMFME scheme.';
+
+  // Use backend content if available, otherwise use defaults
+  const title = content?.hero?.sectionTitle || defaultTitle;
+  const heroContent = content?.hero?.content || defaultContent;
+
+  if (isLoading) {
+    return (
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/assets/generated/hero-bg.dim_1920x800.png"
+            alt="Millet fields in Rayagada"
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center space-y-6">
+            <Skeleton className="h-8 w-64 mx-auto" />
+            <Skeleton className="h-16 w-full" />
+            <Skeleton className="h-12 w-3/4 mx-auto" />
+            <Skeleton className="h-24 w-full" />
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Render with default content even if there's an error
   return (
     <section
       id="home"
@@ -20,6 +58,10 @@ const Hero = () => {
           src="/assets/generated/hero-bg.dim_1920x800.png"
           alt="Millet fields in Rayagada"
           className="w-full h-full object-cover"
+          onError={(e) => {
+            console.warn('[Hero] Background image failed to load');
+            e.currentTarget.style.display = 'none';
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/70 to-background"></div>
       </div>
@@ -29,22 +71,20 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto text-center">
           <div className="mb-6">
             <p className="text-primary font-semibold text-lg md:text-xl mb-2 tracking-wide">
-              Powered by Farmers. Trusted by Families.
+              {defaultTagline}
             </p>
           </div>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
-            Aparna Natural Millets Producer Co. Ltd.
+            {title}
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed">
-            Establishment of a 1 TPD Millet Processing Unit
+            {heroContent}
           </p>
           
           <p className="text-lg md:text-xl text-foreground/90 mb-10 max-w-3xl mx-auto">
-            Empowering Tribal Farmers & Enhancing Nutrition in Rayagada — a compact, 
-            farmer-owned millet processing unit aligned with the Odisha Millets Mission 
-            and PMFME scheme.
+            {defaultDescription}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

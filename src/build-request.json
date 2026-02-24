@@ -1,328 +1,216 @@
 {
   "kind": "build_request",
-  "title": "Build comprehensive professional company website for Aparna Natural Millets Producer Co. Ltd.",
-  "projectName": "Aparna Millets",
-  "priority": "normal",
+  "title": "Fix critical deployment blank page issue",
+  "priority": "high",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a Hero/Home section featuring the company name 'Aparna Natural Millets Producer Co. Ltd.', tagline 'Powered by Farmers. Trusted by Families.', and a compelling headline about the 1 TPD Millet Processing Unit project in Rayagada, Odisha",
+      "id": "REQ-32",
+      "text": "Add React error boundary component to catch and display initialization errors instead of showing blank page",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "Aparna Natural Millets Producer Co. Ltd.",
-          "Powered by Farmers. Trusted by Families.",
-          "Establishment of a 1 TPD Millet Processing Unit"
+          "it blank immediately",
+          "The page is completely blank"
         ]
       },
       "acceptanceCriteria": [
-        "Hero section displays company name prominently",
-        "Tagline is visible and well-positioned",
-        "Includes engaging headline about the processing unit project"
+        "Error boundary wraps the main App component",
+        "Displays user-friendly error message with details when React rendering fails",
+        "Shows fallback UI instead of blank page on critical errors"
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Build an About the Company section explaining the farmer-owned cooperative model, alignment with Odisha Millets Mission (OMM) and PMFME scheme, and the mission to empower tribal farmers while enhancing nutrition in Rayagada",
+      "id": "REQ-33",
+      "text": "Add loading states and suspense boundaries to prevent blank screens during data fetching and route transitions",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "compact, farmer-owned millet processing unit designed and promoted by the Board of Directors",
-          "aligns directly with the Odisha Millets Mission (OMM) and the Central PMFME scheme"
+          "it blank immediately"
         ]
       },
       "acceptanceCriteria": [
-        "Section explains the farmer-owned cooperative structure",
-        "Mentions alignment with OMM and PMFME schemes",
-        "Describes mission to empower tribal farmers and enhance nutrition"
+        "Loading spinner or skeleton displayed while content fetches",
+        "Suspense boundaries wrap async components",
+        "No blank page shown during initial load or navigation"
       ]
     },
     {
-      "id": "REQ-3",
-      "text": "Create a Project Vision & Core Objectives section presenting the vision statement and three core objectives: Assured Procurement (transparent procurement at fairer prices for 500+ FPC members), Post-harvest Loss Reduction (primary and secondary processing to reduce losses and increase marketable value), and Nutrition & Supply (manufacture high-quality millet products for ICDS, Mid-Day Meals, and tribal hostels)",
+      "id": "REQ-34",
+      "text": "Fix Vite build configuration to ensure proper asset bundling and base path configuration for Internet Computer deployment",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "To create a sustainable, farmer-owned value chain in Rayagada",
-          "Provide transparent, timely procurement at fairer prices directly to 500+ FPC members",
-          "Introduce primary and secondary processing",
-          "Manufacture high-quality millet products"
+          "The page is completely blank",
+          "Build/Bundle Error: The Vite build may have failed or produced corrupted assets"
         ]
       },
       "acceptanceCriteria": [
-        "Vision statement is clearly displayed",
-        "All three core objectives are presented with their descriptions",
-        "Specific details like 500+ FPC members and target programs (ICDS, MDM) are included"
+        "vite.config.ts configured with correct base path for IC deployment",
+        "All static assets properly bundled and referenced",
+        "Build completes without errors"
       ]
     },
     {
-      "id": "REQ-4",
-      "text": "Build a Why Rayagada section explaining the local context (Rayagada as a leading producer of Ragi and minor millets), current market challenges with intermediaries, benefits of local processing to retain value in the district, and projected social impact reaching 500+ direct farmer beneficiaries and thousands of consumers through institutional procurement",
+      "id": "REQ-35",
+      "text": "Add fallback default content for all sections so pages render even when backend connection fails or returns empty data",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "Rayagada district is a leading producer of Ragi and other minor millets",
-          "sold to intermediaries for low margins",
-          "Direct beneficiaries: 500+ registered farmer members"
+          "The page is completely blank",
+          "Backend Connection: The frontend can't connect to the backend canister"
         ]
       },
       "acceptanceCriteria": [
-        "Explains Rayagada's role as a millet producer",
-        "Describes current market inefficiencies",
-        "Details benefits of local value-add processing",
-        "Shows projected social impact with specific beneficiary numbers"
+        "All section components display placeholder content when API calls fail",
+        "Hero, About, ProjectVision, WhyRayagada, TechnicalSpecs, FinancialOverview, SocialImpact, MarketStrategy, ValueChain, SupportRequested, NextSteps, and ContactForm components show default content on error",
+        "Pages remain functional and readable even without backend data"
       ]
     },
     {
-      "id": "REQ-5",
-      "text": "Create a Technical Specifications section showcasing the 1 TPD processing design with four key components: Pre-cleaning & Grading (multi-stage aspiration and sieving), De-huller & Destoner (efficient de-hulling with integrated destoner), Pulverizer (variable gap pulverizer for coarse and fine flours), and Roaster & Automatic Packaging (controlled roasting with automated weighing and pouch sealing). Include details about ancillary systems and modular expansion plans to 2-3 TPD",
+      "id": "REQ-36",
+      "text": "Fix React Router configuration to work correctly in Internet Computer deployment environment with proper route matching",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "Pre-cleaning & Grading",
-          "De-huller & Destoner",
-          "Pulverizer (Flour & Pulverized Mixes)",
-          "Roaster & Automatic Packaging",
-          "modular expansion to 2–3 TPD in Phase II"
+          "The page is completely blank",
+          "Router Configuration: React Router may not be properly configured for the deployment environment"
         ]
       },
       "acceptanceCriteria": [
-        "All four main processing components are described with their functions",
-        "Technical details about each stage are included",
-        "Mentions ancillary systems (cold storage, quality lab)",
-        "Notes modular expansion capability to 2-3 TPD"
+        "Router properly configured for IC canister URLs",
+        "Both root route (/) and /admin route load correctly",
+        "No routing errors in browser console"
       ]
     },
     {
-      "id": "REQ-6",
-      "text": "Build a Financial Overview section presenting Total Project Cost (₹1.15 Crore), Means of Finance breakdown (Bank Loan: ₹70.00 Lakhs, Promoter Contribution: ₹4.75 Lakhs, PMFME Subsidy 35%: ₹40.25 Lakhs), and Year 1 projections (Revenue: ₹1.50 Crore, Net Profit: ₹35 Lakhs)",
+      "id": "REQ-37",
+      "text": "Add comprehensive error handling and logging to backend actor connection initialization with retry logic",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "Total Project Cost ₹1.15 Crore",
-          "Bank Loan: ₹70.00 Lakhs",
-          "Promoter Contribution: ₹4.75 Lakhs",
-          "PMFME Subsidy (35%): Applied for ₹40.25 Lakhs",
-          "Revenue Projection (Year 1): ₹1.50 Crore",
-          "Net Profit Projection: ₹35 Lakhs"
+          "Backend Connection: The frontend can't connect to the backend canister (wrong canister IDs or network configuration)"
         ]
       },
       "acceptanceCriteria": [
-        "Total project cost is clearly stated",
-        "All funding sources are listed with amounts",
-        "Year 1 revenue and profit projections are displayed",
-        "Financial information is presented in a professional, digestible format"
+        "useActor hook catches and logs connection errors",
+        "Implements exponential backoff retry for failed connections",
+        "Displays user-friendly error message when backend unreachable",
+        "Falls back to default content if connection cannot be established"
       ]
     },
     {
-      "id": "REQ-7",
-      "text": "Create a Social & Economic Impact section highlighting three areas: Employment & Inclusion (15 direct jobs for local tribal youth and women), Farmer Livelihoods & Income (increased incomes through assured procurement for 500+ member base), and Nutrition & Local Food Security (supplying hygienic milled millet products to ICDS and MDM to address anemia and child nutrition)",
+      "id": "REQ-38",
+      "text": "Fix Internet Identity authentication flow to handle initialization errors gracefully without blocking page render",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "15 direct jobs prioritized for local tribal youth and women",
-          "Increased farmer incomes through assured procurement",
-          "Supplying hygienic, milled millet products to ICDS and MDM"
+          "The page is completely blank",
+          "Review and fix the Internet Identity integration"
         ]
       },
       "acceptanceCriteria": [
-        "All three impact areas are clearly presented",
-        "Specific numbers (15 jobs, 500+ farmers) are included",
-        "Nutrition and food security benefits are explained",
-        "Impact on tribal communities is emphasized"
+        "Auth initialization errors don't prevent app from loading",
+        "Users can still view public pages if auth fails",
+        "Clear error message shown if admin login fails",
+        "Anonymous actor created as fallback when auth unavailable"
       ]
     },
     {
-      "id": "REQ-8",
-      "text": "Build a Market Strategy section presenting three channels: B2G (Institutional Offtake to ICDS, Mid-Day Meals, Tribal Hostels), B2B (Retail & Mission Outlets including Odisha Millets Mission outlets and cooperative stores with 25kg bulk SKUs), and B2C (Brand 'Aparna Millets' with 1kg retail SKUs, local-language labeling, and digital outreach targeting health-conscious urban buyers in Odisha)",
+      "id": "REQ-39",
+      "text": "Add console logging and diagnostics throughout app initialization to help identify failure points in deployment",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "B2G —Institutional Offtake",
-          "B2B —Retail & Mission Outlets",
-          "B2C —Brand 'Aparna Millets'",
-          "local-language labelling",
-          "targeted digital outreach in Odisha"
+          "The page is completely blank"
         ]
       },
       "acceptanceCriteria": [
-        "All three market channels (B2G, B2B, B2C) are described",
-        "Target buyers and product SKUs for each channel are specified",
-        "Brand 'Aparna Millets' consumer positioning is explained",
-        "Sustainability levers are mentioned"
+        "Logs app initialization start",
+        "Logs backend connection attempts and results",
+        "Logs auth initialization status",
+        "Logs route navigation events",
+        "Logs any caught errors with stack traces"
       ]
     },
     {
-      "id": "REQ-9",
-      "text": "Create a Value Chain Process section illustrating the end-to-end workflow with five stages: Aggregation (farmer collection and scheduled procurement), Cleaning (primary cleaning to reduce contamination), Processing (de-hulling, milling and roasting operations), and Dispatch (packaging, quality checks and delivery). Include operational KPI targets for Year 1: procurement coverage for 500 members, ≤5% post-harvest loss, product moisture ≤10%, and institutional delivery lead time ≤7 days",
+      "id": "REQ-40",
+      "text": "Ensure all static asset paths (images, CSS) are correctly resolved relative to deployment base URL",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "Farmer collection and scheduled procurement",
-          "Primary cleaning to reduce contamination",
-          "De-hulling, milling and roasting",
-          "Packaging, quality checks and delivery",
-          "procurement coverage for 500 members, ≤5% post-harvest loss"
+          "The page is completely blank",
+          "Ensure all static assets are properly referenced"
         ]
       },
       "acceptanceCriteria": [
-        "All five value chain stages are presented in sequence",
-        "Each stage's function is described",
-        "Year 1 operational KPI targets are displayed",
-        "Visual or structured flow representation of the process"
+        "All image src paths work in deployed environment",
+        "CSS files load correctly",
+        "No 404 errors for assets in browser console",
+        "Asset paths use proper relative or absolute URLs for IC deployment"
       ]
     },
     {
-      "id": "REQ-10",
-      "text": "Build a Support Requested section addressing government and district administration with four specific requests: Administrative Guidance (facilitate PMFME subsidy clearance and verification visits), Procurement Convergence (inclusion in district procurement lists for ICDS/MDM and tribal hostels), Land & Infrastructure Assistance (help identify industrial shed or expedite clearances), and Linkages & Capacity Building (facilitate introductions to state procurement officers and training collaborations)",
-      "target": "frontend",
+      "id": "REQ-41",
+      "text": "Verify and fix backend canister declarations to ensure frontend can properly communicate with deployed backend",
+      "target": "both",
       "source": {
         "messageIds": [
-          "msg-5"
+          "msg-final"
         ],
         "quotes": [
-          "Administrative Guidance",
-          "Procurement Convergence",
-          "Land & Infrastructure Assistance",
-          "Linkages & Capacity Building",
-          "district-level meeting to formalize timelines"
+          "Backend Connection: The frontend can't connect to the backend canister (wrong canister IDs or network configuration)"
         ]
       },
       "acceptanceCriteria": [
-        "All four support requests are clearly articulated",
-        "Each request is specific and actionable",
-        "Target audience (Collectorate & District Administration) is clear",
-        "Request for district-level meeting with 60-90 day timeline is included"
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "text": "Create a Conclusion & Next Steps section outlining three phases: Phase 1 Commissioning (0-3 months: finalize site, install machinery, recruit staff, secure PMFME subsidy), Phase 2 Operationalization (3-9 months: begin procurement cycles, achieve 70% capacity utilization, obtain institutional trial orders), and Phase 3 Scale & Consolidate (9-24 months: expand market reach, introduce fortified SKUs, pursue certification, plan Phase II capacity uplift to 2-3 TPD)",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5"
-        ],
-        "quotes": [
-          "Phase 1 — Commissioning (0–3 months)",
-          "Phase 2 — Operationalization (3-9 months)",
-          "Phase 3 — Scale & Consolidate (9–24 months)"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All three phases are presented with timeframes",
-        "Key activities for each phase are listed",
-        "Progressive scale-up from commissioning to consolidation is clear",
-        "Phase II capacity expansion to 2-3 TPD is mentioned"
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "text": "Build a Contact section displaying contact information for Bibhuti Bhusana Mishra (Phone: +919437372707, Email: bibhuti4011@gmail.com) and including an interactive contact form with fields for name, email, phone, subject/inquiry type, and message. The form should allow government officials, investors, and potential customers to submit inquiries",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-5",
-          "msg-7"
-        ],
-        "quotes": [
-          "Bibhuti Bhusana Mishra",
-          "Phone / Email: (+919437372707 / bibhuti4011@gmail.com)",
-          "contact form for inquiries from government officials, investors, and customers"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Contact information for Bibhuti Bhusana Mishra is displayed",
-        "Interactive contact form includes all required fields",
-        "Form is functional and can collect inquiry submissions",
-        "Contact section is easily accessible from navigation"
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Implement a professional, trustworthy visual design theme that reflects agricultural heritage, cooperative values, and modern processing capabilities. Use warm, earthy tones (avoid blue and purple) inspired by millets and grain, incorporate subtle textures or patterns suggesting farmland or grain processing, and ensure the design conveys both grassroots authenticity and professional credibility suitable for government officials, investors, and customers",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-7"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Color palette uses warm, earthy tones appropriate for agricultural cooperative",
-        "Design balances grassroots authenticity with professional credibility",
-        "Visual theme is consistent across all sections",
-        "Layout and typography support readability for diverse audience (officials, investors, customers)"
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "text": "Create a responsive navigation system that allows easy access to all major sections (Home, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Contact) and ensure the entire website is mobile-responsive for viewing on phones and tablets",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-7"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Navigation menu includes links to all major sections",
-        "Navigation is accessible and functional on all screen sizes",
-        "Website layout adapts properly to mobile and tablet viewports",
-        "All content sections are accessible and readable on smaller screens"
+        "Canister IDs correctly configured for deployment",
+        "Actor interface matches backend methods",
+        "Network configuration points to correct IC network",
+        "Backend methods callable from frontend without errors"
       ]
     }
   ],
   "constraints": [
-    "Use React with TypeScript and Tailwind CSS for frontend implementation",
-    "Contact form should collect inquiries but does not need to integrate with external email services",
-    "All company information must exactly match the details provided in the source document",
-    "Financial figures must be displayed exactly as specified (₹1.15 Crore total cost, ₹1.50 Crore Year 1 revenue, etc.)"
+    "Must maintain existing Internet Identity authentication system",
+    "Must preserve all existing admin editor functionality",
+    "Must not modify read-only UI component sources in frontend/src/components/ui",
+    "Must use single-actor Motoko architecture in backend/main.mo",
+    "Must maintain React + Tailwind + React Query frontend stack"
   ],
   "nonGoals": [
-    "E-commerce functionality for selling millet products directly",
-    "User authentication or member portal",
-    "Real-time inventory or order tracking systems",
-    "Integration with external payment gateways",
-    "Multi-language translation beyond the single primary language",
-    "Backend API for contact form submission processing"
+    "Changing the application's core features or functionality",
+    "Redesigning the UI or visual theme",
+    "Adding new sections or content to the website",
+    "Modifying backend data models or storage structure"
   ],
   "imageRequirements": {
-    "required": [
-      "Hero background showing golden millet grain fields with farmers working, conveying authenticity and agricultural heritage (hero-bg.dim_1920x800.png)",
-      "Illustration of millet processing equipment in clean modern facility, showing dehulling and milling machinery (processing-equipment.dim_800x600.png)",
-      "Icon representing farmers working together in cooperative model, simple line art style (farmers-coop-icon.dim_200x200.png)",
-      "Icon representing assured procurement and fair prices, showing handshake or scales (procurement-icon.dim_200x200.png)",
-      "Icon representing post-harvest loss reduction with grain storage imagery (loss-reduction-icon.dim_200x200.png)",
-      "Icon representing nutrition and health benefits with millet bowl or nutritious food (nutrition-icon.dim_200x200.png)",
-      "Diagram visual showing the five-stage value chain from aggregation to dispatch in flowchart style (value-chain-diagram.dim_1000x600.png)",
-      "Illustration of millet products: packaged flour bags and retail pouches with Aparna Millets branding (products-showcase.dim_800x500.png)"
-    ],
+    "required": [],
     "edits": []
   }
 }

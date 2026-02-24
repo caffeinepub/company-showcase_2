@@ -1,130 +1,65 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Building2, Store, ShoppingBag } from 'lucide-react';
+import { useGetAllContent } from '../hooks/useQueries';
 
 const MarketStrategy = () => {
+  const { data: content } = useGetAllContent();
+
+  // Default fallback content
+  const defaultTitle = 'Market Strategy';
+  const defaultContent = `Our multi-channel distribution strategy ensures sustainable growth:
+
+B2G (Business to Government):
+• Supply to Mid-Day Meal (MDM) scheme
+• ICDS (Integrated Child Development Services)
+• Public Distribution System (PDS)
+• Government hospitals and institutions
+
+B2B (Business to Business):
+• Retail chains and supermarkets
+• Organic food stores
+• Bulk supply to food processors
+• Export opportunities
+
+B2C (Business to Consumer):
+• Branded packaged products
+• Direct farmer markets
+• E-commerce platforms
+• Community retail outlets
+
+Sustainability Levers:
+✓ Organic certification for premium markets
+✓ Fair trade partnerships
+✓ Value-added product development
+✓ Strong brand identity rooted in tribal heritage`;
+
+  const title = content?.marketStrategy?.sectionTitle || defaultTitle;
+  const strategyContent = content?.marketStrategy?.content || defaultContent;
+
   return (
-    <section id="market" className="py-20 bg-muted/30">
+    <section id="market-strategy" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Market Strategy
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Long-Term Sustainability Through Diversified Channels
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8">
+            {title}
+          </h2>
 
-          <div className="mb-12">
-            <img
-              src="/assets/generated/products-showcase.dim_800x500.png"
-              alt="Aparna Millets products"
-              className="w-full max-w-3xl mx-auto rounded-lg shadow-lg"
-            />
-          </div>
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg text-foreground/90 leading-relaxed whitespace-pre-line">
+                {strategyContent}
+              </p>
+            </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            <Card className="border-primary/20">
-              <CardHeader>
-                <div className="flex justify-center mb-4">
-                  <Building2 className="h-12 w-12 text-primary" />
-                </div>
-                <CardTitle className="text-center text-xl">
-                  B2G — Institutional Offtake
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  <strong className="text-foreground block mb-2">Primary Channel</strong>
-                  ICDS, Mid-Day Meals, Tribal Hostels and other government welfare 
-                  programs in Rayagada and adjacent districts.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Aim for formal MOU and district-level procurement inclusion to 
-                  ensure predictable institutional volumes.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardHeader>
-                <div className="flex justify-center mb-4">
-                  <Store className="h-12 w-12 text-primary" />
-                </div>
-                <CardTitle className="text-center text-xl">
-                  B2B — Retail & Mission Outlets
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  <strong className="text-foreground block mb-2">Bulk Supply</strong>
-                  Supply to Odisha Millets Mission outlets, local retailers and 
-                  cooperative stores.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Build bulk SKUs (25 kg) for institutional buyers and 1 kg retail 
-                  SKUs for neighborhood retail.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="border-primary/20">
-              <CardHeader>
-                <div className="flex justify-center mb-4">
-                  <ShoppingBag className="h-12 w-12 text-primary" />
-                </div>
-                <CardTitle className="text-center text-xl">
-                  B2C — Brand 'Aparna Millets'
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground leading-relaxed mb-4">
-                  <strong className="text-foreground block mb-2">Consumer Brand</strong>
-                  Launch consumer brand emphasizing provenance (Rayagada tribal millet), 
-                  nutrition, and traceability.
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Use local-language labelling, small-batch premium positioning, and 
-                  targeted digital outreach in Odisha for urban health-conscious buyers.
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="bg-card rounded-lg p-8 border border-border">
-            <h3 className="text-xl font-semibold text-foreground mb-4">
-              Sustainability Levers
-            </h3>
-            <ul className="space-y-2 text-muted-foreground">
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong className="text-foreground">Producer governance model (FPC):</strong> 
-                  Ensures farmer-centric decision making and profit distribution
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong className="text-foreground">Quality premiums:</strong> Through 
-                  certification (hygiene, organic/identity preserved where possible)
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong className="text-foreground">Diversified channels:</strong> 
-                  Institutional + retail reduces dependency on single buyer
-                </span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-primary mr-2">•</span>
-                <span>
-                  <strong className="text-foreground">Scalable operations:</strong> 
-                  2nd-phase capacity enhancement based on demand
-                </span>
-              </li>
-            </ul>
+            <div className="bg-card border border-border rounded-lg overflow-hidden">
+              <img
+                src="/assets/generated/products-showcase.dim_800x500.png"
+                alt="Product Showcase"
+                className="w-full h-auto object-cover"
+                onError={(e) => {
+                  console.warn('[MarketStrategy] Product showcase image failed to load');
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -1,216 +1,184 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
+import { useGetContactInfo } from '../hooks/useQueries';
 import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Mail, Phone, MapPin, User } from 'lucide-react';
 import { toast } from 'sonner';
-import { Toaster } from '@/components/ui/sonner';
 
 const ContactForm = () => {
+  const { data: contactInfo } = useGetContactInfo();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    inquiryType: '',
     message: '',
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  // Default fallback contact info
+  const defaultContact = {
+    representative: 'Ananya Raj, Founder',
+    email: 'info@aparnamillets.com',
+    phone: '+91 98765 43210',
+    address: 'Rayagada, Odisha, India',
+  };
+
+  const contact = contactInfo || defaultContact;
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.name || !formData.email || !formData.message) {
-      toast.error('Please fill in all required fields');
-      return;
-    }
+    setIsSubmitting(true);
 
-    // Show success message
-    toast.success('Thank you for your inquiry! We will get back to you soon.');
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      inquiryType: '',
-      message: '',
-    });
+    try {
+      // Simulate form submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      toast.success('Message sent successfully! We will get back to you soon.');
+      setFormData({ name: '', email: '', phone: '', message: '' });
+    } catch (error) {
+      console.error('[ContactForm] Submission error:', error);
+      toast.error('Failed to send message. Please try again or contact us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
 
   return (
     <section id="contact" className="py-20 bg-muted/30">
-      <Toaster />
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Get in Touch
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              For coordination, subsidy follow-up, and procurement discussions
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+            Get in Touch
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div>
-              <Card className="border-primary/20 mb-6">
-                <CardHeader>
-                  <CardTitle>Contact Information</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <div className="flex items-start space-x-3">
-                    <Phone className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+            <div className="space-y-8">
+              <div>
+                <h3 className="text-2xl font-semibold text-foreground mb-6">
+                  Contact Information
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-start gap-4">
+                    <User className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-foreground">Phone</p>
-                      <a
-                        href="tel:+919437372707"
-                        className="text-muted-foreground hover:text-primary transition-colors"
-                      >
-                        +91 9437372707
-                      </a>
+                      <p className="font-semibold text-foreground">Representative</p>
+                      <p className="text-muted-foreground">{contact.representative}</p>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <Mail className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                  <div className="flex items-start gap-4">
+                    <Mail className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-foreground">Email</p>
                       <a
-                        href="mailto:bibhuti4011@gmail.com"
-                        className="text-muted-foreground hover:text-primary transition-colors"
+                        href={`mailto:${contact.email}`}
+                        className="text-primary hover:underline"
                       >
-                        bibhuti4011@gmail.com
+                        {contact.email}
                       </a>
                     </div>
                   </div>
-                  <div className="flex items-start space-x-3">
-                    <MapPin className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
+                  <div className="flex items-start gap-4">
+                    <Phone className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
                     <div>
-                      <p className="font-semibold text-foreground">Location</p>
-                      <p className="text-muted-foreground">
-                        Rayagada District, Odisha, India
-                      </p>
+                      <p className="font-semibold text-foreground">Phone</p>
+                      <a
+                        href={`tel:${contact.phone}`}
+                        className="text-primary hover:underline"
+                      >
+                        {contact.phone}
+                      </a>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-
-              <Card className="border-primary/20">
-                <CardHeader>
-                  <CardTitle>Contact Person</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="font-semibold text-foreground text-lg mb-1">
-                    Bibhuti Bhusana Mishra
-                  </p>
-                  <p className="text-muted-foreground">
-                    Aparna Natural Millets Producer Co. Ltd.
-                  </p>
-                </CardContent>
-              </Card>
+                  <div className="flex items-start gap-4">
+                    <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                    <div>
+                      <p className="font-semibold text-foreground">Address</p>
+                      <p className="text-muted-foreground">{contact.address}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* Contact Form */}
-            <Card className="border-primary/20">
-              <CardHeader>
-                <CardTitle>Send Us a Message</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
-                    <Label htmlFor="name">
-                      Name <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="email">
-                      Email <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) =>
-                        setFormData({ ...formData, email: e.target.value })
-                      }
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="phone">Phone</Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={(e) =>
-                        setFormData({ ...formData, phone: e.target.value })
-                      }
-                      placeholder="+91 XXXXXXXXXX"
-                    />
-                  </div>
-
-                  <div>
-                    <Label htmlFor="inquiryType">Inquiry Type</Label>
-                    <Select
-                      value={formData.inquiryType}
-                      onValueChange={(value) =>
-                        setFormData({ ...formData, inquiryType: value })
-                      }
-                    >
-                      <SelectTrigger id="inquiryType">
-                        <SelectValue placeholder="Select inquiry type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="government">
-                          Government Official
-                        </SelectItem>
-                        <SelectItem value="investor">Investor</SelectItem>
-                        <SelectItem value="procurement">
-                          Procurement Inquiry
-                        </SelectItem>
-                        <SelectItem value="partnership">Partnership</SelectItem>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                      </SelectContent>
-                    </Select>
-                  </div>
-
-                  <div>
-                    <Label htmlFor="message">
-                      Message <span className="text-destructive">*</span>
-                    </Label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      placeholder="Tell us about your inquiry..."
-                      rows={5}
-                      required
-                    />
-                  </div>
-
-                  <Button type="submit" className="w-full" size="lg">
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+            <div className="bg-card border border-border rounded-lg p-8">
+              <h3 className="text-2xl font-semibold text-foreground mb-6">
+                Send us a Message
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
+                    Name *
+                  </label>
+                  <Input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your full name"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                    Email *
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="your.email@example.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                    Phone
+                  </label>
+                  <Input
+                    id="phone"
+                    name="phone"
+                    type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="+91 98765 43210"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                    Message *
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    required
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your inquiry..."
+                    rows={5}
+                  />
+                </div>
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </div>

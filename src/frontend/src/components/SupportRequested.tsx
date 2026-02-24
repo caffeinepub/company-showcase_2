@@ -1,35 +1,58 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { FileCheck, Handshake, Building, Users } from 'lucide-react';
+import { useGetAllContent } from '../hooks/useQueries';
+import { FileText, Building2, Users2, Handshake } from 'lucide-react';
 
 const SupportRequested = () => {
-  const requests = [
+  const { data: content } = useGetAllContent();
+
+  // Default fallback content
+  const defaultTitle = 'Support Requested';
+  const defaultContent = `We seek support from the Government of Odisha and Rayagada District Administration:
+
+1. Administrative Guidance
+   • Facilitation of PMFME scheme application
+   • Support in obtaining necessary licenses and clearances
+   • Coordination with relevant departments
+
+2. Infrastructure Support
+   • Land allocation for processing unit
+   • Electricity connection at subsidized rates
+   • Water supply and drainage facilities
+
+3. Market Linkages
+   • Inclusion in government procurement programs
+   • Support for organic certification
+   • Export promotion assistance
+
+4. Financial Facilitation
+   • Expedited processing of subsidy applications
+   • Interest subvention on bank loans
+   • Working capital support
+
+We request a district-level meeting within 60-90 days to discuss implementation details and secure necessary approvals.`;
+
+  const title = content?.supportRequested?.sectionTitle || defaultTitle;
+  const supportContent = content?.supportRequested?.content || defaultContent;
+
+  const supportAreas = [
     {
-      number: '1',
-      icon: FileCheck,
+      icon: FileText,
       title: 'Administrative Guidance',
-      description:
-        'Facilitate faster clearance and issue of necessary certificates for PMFME subsidy claim processing, and expedite verification visits required by the Ministry/implementing agency.',
+      description: 'Facilitation and approvals',
     },
     {
-      number: '2',
+      icon: Building2,
+      title: 'Infrastructure Support',
+      description: 'Land and utilities',
+    },
+    {
+      icon: Users2,
+      title: 'Market Linkages',
+      description: 'Government procurement',
+    },
+    {
       icon: Handshake,
-      title: 'Procurement Convergence',
-      description:
-        'Inclusion of Aparna Millets in district procurement lists for ICDS/MDM and tribal hostels; support in piloting direct procurement of milled products for a defined menu cycle.',
-    },
-    {
-      number: '3',
-      icon: Building,
-      title: 'Land & Infrastructure Assistance',
-      description:
-        'Help identify an industrial shed / serviced land parcel near transport access, or provide support for clearances (environment, building, utilities) to accelerate project commissioning.',
-    },
-    {
-      number: '4',
-      icon: Users,
-      title: 'Linkages & Capacity Building',
-      description:
-        'Facilitate introductions to state procurement officers, enable training collaborations for women workers through local skill centers, and support documentation for food safety certification.',
+      title: 'Financial Facilitation',
+      description: 'Subsidies and loans',
     },
   ];
 
@@ -37,50 +60,36 @@ const SupportRequested = () => {
     <section id="support" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Support Requested
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              From Collectorate & District Administration
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-12 text-center">
+            {title}
+          </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            {requests.map((request) => {
-              const Icon = request.icon;
+          <div className="grid md:grid-cols-4 gap-6 mb-12">
+            {supportAreas.map((area, index) => {
+              const Icon = area.icon;
               return (
-                <Card key={request.number} className="border-primary/20">
-                  <CardHeader>
-                    <div className="flex items-center space-x-4 mb-2">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <span className="text-xl font-bold text-primary">
-                          {request.number}
-                        </span>
-                      </div>
-                      <Icon className="h-8 w-8 text-primary" />
-                    </div>
-                    <CardTitle className="text-xl">{request.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {request.description}
-                    </p>
-                  </CardContent>
-                </Card>
+                <div
+                  key={index}
+                  className="bg-card border border-border rounded-lg p-6 text-center hover:shadow-lg transition-shadow"
+                >
+                  <Icon className="h-10 w-10 text-primary mx-auto mb-3" />
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {area.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {area.description}
+                  </p>
+                </div>
               );
             })}
           </div>
 
-          <div className="bg-primary/10 border border-primary/20 rounded-lg p-8">
-            <h3 className="text-xl font-semibold text-foreground mb-4 text-center">
-              Request for District-Level Meeting
-            </h3>
-            <p className="text-foreground/90 leading-relaxed text-center max-w-3xl mx-auto">
-              We request a district-level meeting to formalize timelines and designate 
-              nodal officers to ensure PMFME subsidy disbursal and procurement trial 
-              implementation within the next <strong>60–90 days</strong>.
-            </p>
+          <div className="bg-card border border-border rounded-lg p-8">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-lg text-foreground/90 leading-relaxed whitespace-pre-line">
+                {supportContent}
+              </p>
+            </div>
           </div>
         </div>
       </div>
