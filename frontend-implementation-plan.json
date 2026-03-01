@@ -1,0 +1,24 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Change hero description paragraph text color to light black (dark gray)",
+  "requirements": [
+    {
+      "id": "REQ-51",
+      "summary": "Apply dark gray color (text-gray-600) to the Hero section's descriptive paragraph text for improved readability and softer contrast",
+      "acceptanceCriteria": [
+        "The descriptive paragraph in the Hero section renders with a light black / dark gray color (e.g., `text-gray-600` or `#4B5563`).",
+        "The text is clearly readable against the hero background.",
+        "No other text elements in the Hero section are unintentionally affected by this color change.",
+        "The fallback/default paragraph text also uses the same dark gray color class."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Update the descriptive paragraph element in the Hero component to apply the Tailwind class `text-gray-600` (or equivalent dark gray styling) to the text content: 'Join the Millet Revolution for sustainable food processing. At Aparna Millets, we are pioneering tasty distributes of healthcare-certified millet products and supporting smallholders with sustainable trade, contract farming, and value-adding processing. Marketplace innovation, sustainable cash crop support, chemical-free cultivation, and healthcare-certified millet products.' Ensure both the dynamically rendered content and the hardcoded fallback paragraph use the same color class. Do not modify the title, tagline, button, or any other text elements in the Hero section."
+        }
+      ]
+    }
+  ]
+}

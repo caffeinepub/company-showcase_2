@@ -1,0 +1,37 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-01T07:55:06.638Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 1,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-51",
+        "summary": "In the Hero section component (frontend/src/components/Hero.tsx), apply a light black / dark gray color (Tailwind class `text-gray-600` or equivalent) to the descriptive paragraph text: 'Join the Millet Revolution for sustainable food processing. At Aparna Millets, we are pioneering tasty distributes of healthcare-certified millet products and supporting smallholders with sustainable trade, contract farming, and value-adding processing. Marketplace innovation, sustainable cash crop support, chemical-free cultivation, and healthcare-certified millet products.' so it renders as a softer dark gray rather than full black or white.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Hero.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Hero.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/components/Hero.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

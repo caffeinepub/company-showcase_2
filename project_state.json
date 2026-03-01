@@ -1,0 +1,512 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 15,
+  "summary": "Professional company website for Aparna Natural Millets Producer Co. Ltd., a farmer-owned millet processing cooperative in Rayagada, Odisha. Multi-audience site (government officials, investors, customers) showcasing 1 TPD millet processing unit project with comprehensive sections including project vision, technical specifications, financial overview, social impact, market strategy, and contact features.",
+  "architectural_notes": [
+    "Multi-audience website design balancing formal presentation for officials/investors with customer-facing elements",
+    "Comprehensive information architecture covering corporate overview, technical specifications, financial projections, and social impact metrics",
+    "Contact form implementation for stakeholder inquiries",
+    "Admin control system with Internet Identity authentication for secure access",
+    "Backend content management storage using Motoko canisters to persist all editable website content",
+    "Admin dashboard route at /admin with comprehensive editing interfaces for all website sections",
+    "Order management system with role-based access control (admin, distributor, individual, ICDS)",
+    "Admin authentication using username/password (Bibhuti/Bibhuti@4011) separate from Internet Identity",
+    "Dual user registration flow: admin-created accounts and self-registration with approval",
+    "Product catalog with role-based pricing and visibility rules"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-hero-home-section-featuring-the-company-name-aparna-natural-millets-producer-co-ltd-tagline-powered-by-farmers-trusted-by-families-and-a-compelling-headline-about-the-1-tpd-millet-processing-unit-project-in-rayagada-odisha",
+      "title": "Create a Hero/Home section featuring the company name 'Aparna Natural Millets Producer Co. Ltd.', tagline 'Powered by Farmers. Trusted by Families.', and a compelling headline about the 1 TPD Millet Processing Unit project in Rayagada, Odisha",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-about-the-company-section-explaining-the-farmer-owned-cooperative-model-alignment-with-odisha-millets-mission-omm-and-pmfme-scheme-and-the-mission-to-empower-tribal-farmers-while-enhancing-nutrition-in-rayagada",
+      "title": "Build an About the Company section explaining the farmer-owned cooperative model, alignment with Odisha Millets Mission (OMM) and PMFME scheme, and the mission to empower tribal farmers while enhancing nutrition in Rayagada",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-project-vision-core-objectives-section-presenting-the-vision-statement-and-three-core-objectives-assured-procurement-transparent-procurement-at-fairer-prices-for-500-fpc-members-post-harvest-loss-reduction-primary-and-secondary-processing-to-reduce-losses-and-increase-marketable-value-and-nutrition-supply-manufacture-high-quality-millet-products-for-icds-mid-day-meals-and-tribal-hostels",
+      "title": "Create a Project Vision & Core Objectives section presenting the vision statement and three core objectives: Assured Procurement (transparent procurement at fairer prices for 500+ FPC members), Post-harvest Loss Reduction (primary and secondary processing to reduce losses and increase marketable value), and Nutrition & Supply (manufacture high-quality millet products for ICDS, Mid-Day Meals, and tribal hostels)",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-why-rayagada-section-explaining-the-local-context-rayagada-as-a-leading-producer-of-ragi-and-minor-millets-current-market-challenges-with-intermediaries-benefits-of-local-processing-to-retain-value-in-the-district-and-projected-social-impact-reaching-500-direct-farmer-beneficiaries-and-thousands-of-consumers-through-institutional-procurement",
+      "title": "Build a Why Rayagada section explaining the local context (Rayagada as a leading producer of Ragi and minor millets), current market challenges with intermediaries, benefits of local processing to retain value in the district, and projected social impact reaching 500+ direct farmer beneficiaries and thousands of consumers through institutional procurement",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-technical-specifications-section-showcasing-the-1-tpd-processing-design-with-four-key-components-pre-cleaning-grading-multi-stage-aspiration-and-sieving-de-huller-destoner-efficient-de-hulling-with-integrated-destoner-pulverizer-variable-gap-pulverizer-for-coarse-and-fine-flours-and-roaster-automatic-packaging-controlled-roasting-with-automated-weighing-and-pouch-sealing-include-details-about-ancillary-systems-and-modular-expansion-plans-to-2-3-tpd",
+      "title": "Create a Technical Specifications section showcasing the 1 TPD processing design with four key components: Pre-cleaning & Grading (multi-stage aspiration and sieving), De-huller & Destoner (efficient de-hulling with integrated destoner), Pulverizer (variable gap pulverizer for coarse and fine flours), and Roaster & Automatic Packaging (controlled roasting with automated weighing and pouch sealing). Include details about ancillary systems and modular expansion plans to 2-3 TPD",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-financial-overview-section-presenting-total-project-cost-1-15-crore-means-of-finance-breakdown-bank-loan-70-00-lakhs-promoter-contribution-4-75-lakhs-pmfme-subsidy-35-40-25-lakhs-and-year-1-projections-revenue-1-50-crore-net-profit-35-lakhs",
+      "title": "Build a Financial Overview section presenting Total Project Cost (₹1.15 Crore), Means of Finance breakdown (Bank Loan: ₹70.00 Lakhs, Promoter Contribution: ₹4.75 Lakhs, PMFME Subsidy 35%: ₹40.25 Lakhs), and Year 1 projections (Revenue: ₹1.50 Crore, Net Profit: ₹35 Lakhs)",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-social-economic-impact-section-highlighting-three-areas-employment-inclusion-15-direct-jobs-for-local-tribal-youth-and-women-farmer-livelihoods-income-increased-incomes-through-assured-procurement-for-500-member-base-and-nutrition-local-food-security-supplying-hygienic-milled-millet-products-to-icds-and-mdm-to-address-anemia-and-child-nutrition",
+      "title": "Create a Social & Economic Impact section highlighting three areas: Employment & Inclusion (15 direct jobs for local tribal youth and women), Farmer Livelihoods & Income (increased incomes through assured procurement for 500+ member base), and Nutrition & Local Food Security (supplying hygienic milled millet products to ICDS and MDM to address anemia and child nutrition)",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-market-strategy-section-presenting-three-channels-b2g-institutional-offtake-to-icds-mid-day-meals-tribal-hostels-b2b-retail-mission-outlets-including-odisha-millets-mission-outlets-and-cooperative-stores-with-25kg-bulk-skus-and-b2c-brand-aparna-millets-with-1kg-retail-skus-local-language-labeling-and-digital-outreach-targeting-health-conscious-urban-buyers-in-odisha",
+      "title": "Build a Market Strategy section presenting three channels: B2G (Institutional Offtake to ICDS, Mid-Day Meals, Tribal Hostels), B2B (Retail & Mission Outlets including Odisha Millets Mission outlets and cooperative stores with 25kg bulk SKUs), and B2C (Brand 'Aparna Millets' with 1kg retail SKUs, local-language labeling, and digital outreach targeting health-conscious urban buyers in Odisha)",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-value-chain-process-section-illustrating-the-end-to-end-workflow-with-five-stages-aggregation-farmer-collection-and-scheduled-procurement-cleaning-primary-cleaning-to-reduce-contamination-processing-de-hulling-milling-and-roasting-operations-and-dispatch-packaging-quality-checks-and-delivery-include-operational-kpi-targets-for-year-1-procurement-coverage-for-500-members-5-post-harvest-loss-product-moisture-10-and-institutional-delivery-lead-time-7-days",
+      "title": "Create a Value Chain Process section illustrating the end-to-end workflow with five stages: Aggregation (farmer collection and scheduled procurement), Cleaning (primary cleaning to reduce contamination), Processing (de-hulling, milling and roasting operations), and Dispatch (packaging, quality checks and delivery). Include operational KPI targets for Year 1: procurement coverage for 500 members, ≤5% post-harvest loss, product moisture ≤10%, and institutional delivery lead time ≤7 days",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-support-requested-section-addressing-government-and-district-administration-with-four-specific-requests-administrative-guidance-facilitate-pmfme-subsidy-clearance-and-verification-visits-procurement-convergence-inclusion-in-district-procurement-lists-for-icds-mdm-and-tribal-hostels-land-infrastructure-assistance-help-identify-industrial-shed-or-expedite-clearances-and-linkages-capacity-building-facilitate-introductions-to-state-procurement-officers-and-training-collaborations",
+      "title": "Build a Support Requested section addressing government and district administration with four specific requests: Administrative Guidance (facilitate PMFME subsidy clearance and verification visits), Procurement Convergence (inclusion in district procurement lists for ICDS/MDM and tribal hostels), Land & Infrastructure Assistance (help identify industrial shed or expedite clearances), and Linkages & Capacity Building (facilitate introductions to state procurement officers and training collaborations)",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-conclusion-next-steps-section-outlining-three-phases-phase-1-commissioning-0-3-months-finalize-site-install-machinery-recruit-staff-secure-pmfme-subsidy-phase-2-operationalization-3-9-months-begin-procurement-cycles-achieve-70-capacity-utilization-obtain-institutional-trial-orders-and-phase-3-scale-consolidate-9-24-months-expand-market-reach-introduce-fortified-skus-pursue-certification-plan-phase-ii-capacity-uplift-to-2-3-tpd",
+      "title": "Create a Conclusion & Next Steps section outlining three phases: Phase 1 Commissioning (0-3 months: finalize site, install machinery, recruit staff, secure PMFME subsidy), Phase 2 Operationalization (3-9 months: begin procurement cycles, achieve 70% capacity utilization, obtain institutional trial orders), and Phase 3 Scale & Consolidate (9-24 months: expand market reach, introduce fortified SKUs, pursue certification, plan Phase II capacity uplift to 2-3 TPD)",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-contact-section-displaying-contact-information-for-bibhuti-bhusana-mishra-phone-919437372707-email-bibhuti4011-gmail-com-and-including-an-interactive-contact-form-with-fields-for-name-email-phone-subject-inquiry-type-and-message-the-form-should-allow-government-officials-investors-and-potential-customers-to-submit-inquiries",
+      "title": "Build a Contact section displaying contact information for Bibhuti Bhusana Mishra (Phone: +919437372707, Email: bibhuti4011@gmail.com) and including an interactive contact form with fields for name, email, phone, subject/inquiry type, and message. The form should allow government officials, investors, and potential customers to submit inquiries",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-professional-trustworthy-visual-design-theme-that-reflects-agricultural-heritage-cooperative-values-and-modern-processing-capabilities-use-warm-earthy-tones-avoid-blue-and-purple-inspired-by-millets-and-grain-incorporate-subtle-textures-or-patterns-suggesting-farmland-or-grain-processing-and-ensure-the-design-conveys-both-grassroots-authenticity-and-professional-credibility-suitable-for-government-officials-investors-and-customers",
+      "title": "Implement a professional, trustworthy visual design theme that reflects agricultural heritage, cooperative values, and modern processing capabilities. Use warm, earthy tones (avoid blue and purple) inspired by millets and grain, incorporate subtle textures or patterns suggesting farmland or grain processing, and ensure the design conveys both grassroots authenticity and professional credibility suitable for government officials, investors, and customers",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-responsive-navigation-system-that-allows-easy-access-to-all-major-sections-home-about-project-vision-why-rayagada-technical-specifications-financial-overview-social-impact-market-strategy-value-chain-support-requested-contact-and-ensure-the-entire-website-is-mobile-responsive-for-viewing-on-phones-and-tablets",
+      "title": "Create a responsive navigation system that allows easy access to all major sections (Home, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Contact) and ensure the entire website is mobile-responsive for viewing on phones and tablets",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-dashboard-route-accessible-at-admin-with-internet-identity-authentication-integration-using-the-existing-useinternetidentity-hook",
+      "title": "Create an admin dashboard route accessible at /admin with Internet Identity authentication integration using the existing useInternetIdentity hook",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-hero-home-section-allowing-edits-to-company-name-tagline-headline-text-and-background-image-url",
+      "title": "Create admin panel content editor for Hero/Home section allowing edits to company name, tagline, headline text, and background image URL",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-about-company-section-allowing-edits-to-all-descriptive-text-about-the-cooperative-model-omm-pmfme-alignment-and-mission-statement",
+      "title": "Create admin panel content editor for About Company section allowing edits to all descriptive text about the cooperative model, OMM/PMFME alignment, and mission statement",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-project-vision-section-allowing-edits-to-vision-statement-and-all-three-core-objectives-assured-procurement-post-harvest-loss-reduction-nutrition-supply-with-their-descriptions",
+      "title": "Create admin panel content editor for Project Vision section allowing edits to vision statement and all three core objectives (Assured Procurement, Post-harvest Loss Reduction, Nutrition & Supply) with their descriptions",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-why-rayagada-section-allowing-edits-to-local-context-description-market-challenges-processing-benefits-and-social-impact-projections",
+      "title": "Create admin panel content editor for Why Rayagada section allowing edits to local context description, market challenges, processing benefits, and social impact projections",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-technical-specifications-section-allowing-edits-to-all-four-processing-components-pre-cleaning-grading-de-huller-destoner-pulverizer-roaster-packaging-ancillary-systems-description-and-expansion-plans",
+      "title": "Create admin panel content editor for Technical Specifications section allowing edits to all four processing components (Pre-cleaning & Grading, De-huller & Destoner, Pulverizer, Roaster & Packaging), ancillary systems description, and expansion plans",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-financial-overview-section-allowing-edits-to-total-project-cost-all-funding-source-amounts-bank-loan-promoter-contribution-pmfme-subsidy-with-percentage-and-year-1-projections-revenue-and-net-profit",
+      "title": "Create admin panel content editor for Financial Overview section allowing edits to total project cost, all funding source amounts (bank loan, promoter contribution, PMFME subsidy with percentage), and Year 1 projections (revenue and net profit)",
+      "reqIds": [
+        "REQ-22"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-social-economic-impact-section-allowing-edits-to-all-three-impact-areas-employment-inclusion-jobs-data-and-description-farmer-livelihoods-income-member-count-and-income-details-and-nutrition-local-food-security-program-details-and-beneficiaries",
+      "title": "Create admin panel content editor for Social & Economic Impact section allowing edits to all three impact areas: Employment & Inclusion (jobs data and description), Farmer Livelihoods & Income (member count and income details), and Nutrition & Local Food Security (program details and beneficiaries)",
+      "reqIds": [
+        "REQ-23"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-market-strategy-section-allowing-edits-to-all-three-sales-channels-b2g-institutional-b2b-retail-b2c-consumer-with-their-descriptions-and-product-details",
+      "title": "Create admin panel content editor for Market Strategy section allowing edits to all three sales channels (B2G institutional, B2B retail, B2C consumer) with their descriptions and product details",
+      "reqIds": [
+        "REQ-24"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-value-chain-section-allowing-edits-to-all-four-workflow-stages-aggregation-cleaning-processing-dispatch-and-all-operational-kpi-targets-for-year-1",
+      "title": "Create admin panel content editor for Value Chain section allowing edits to all four workflow stages (Aggregation, Cleaning, Processing, Dispatch) and all operational KPI targets for Year 1",
+      "reqIds": [
+        "REQ-25"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-support-requested-section-allowing-edits-to-all-four-support-request-types-administrative-guidance-procurement-convergence-land-infrastructure-assistance-linkages-capacity-building-with-their-descriptions",
+      "title": "Create admin panel content editor for Support Requested section allowing edits to all four support request types (Administrative Guidance, Procurement Convergence, Land & Infrastructure Assistance, Linkages & Capacity Building) with their descriptions",
+      "reqIds": [
+        "REQ-26"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-conclusion-next-steps-section-allowing-edits-to-all-three-implementation-phases-commissioning-operationalization-scale-consolidate-with-timeframes-and-activities-plus-the-closing-statement",
+      "title": "Create admin panel content editor for Conclusion & Next Steps section allowing edits to all three implementation phases (Commissioning, Operationalization, Scale & Consolidate) with timeframes and activities, plus the closing statement",
+      "reqIds": [
+        "REQ-27"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-admin-panel-content-editor-for-contact-section-allowing-edits-to-contact-person-name-phone-number-email-address-and-the-contact-form-configuration",
+      "title": "Create admin panel content editor for Contact section allowing edits to contact person name, phone number, email address, and the contact form configuration",
+      "reqIds": [
+        "REQ-28"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-image-upload-functionality-in-the-admin-panel-allowing-admins-to-upload-new-images-for-any-section-with-uploaded-images-stored-as-static-assets-in-frontend-public-assets-uploaded-directory-and-their-urls-saved-to-backend-content-data",
+      "title": "Implement image upload functionality in the admin panel allowing admins to upload new images for any section, with uploaded images stored as static assets in frontend/public/assets/uploaded directory and their URLs saved to backend content data",
+      "reqIds": [
+        "REQ-29"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-all-frontend-section-components-hero-aboutcompany-projectvision-whyrayagada-technicalspecs-financialoverview-socialimpact-marketstrategy-valuechain-supportrequested-nextsteps-contactform-to-fetch-and-display-content-from-backend-instead-of-hardcoded-data",
+      "title": "Update all frontend section components (Hero, AboutCompany, ProjectVision, WhyRayagada, TechnicalSpecs, FinancialOverview, SocialImpact, MarketStrategy, ValueChain, SupportRequested, NextSteps, ContactForm) to fetch and display content from backend instead of hardcoded data",
+      "reqIds": [
+        "REQ-30"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-clean-intuitive-admin-dashboard-interface-with-a-navigation-sidebar-listing-all-editable-sections-organized-by-category-and-displaying-the-current-authentication-status",
+      "title": "Create a clean, intuitive admin dashboard interface with a navigation sidebar listing all editable sections, organized by category, and displaying the current authentication status",
+      "reqIds": [
+        "REQ-31"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-react-error-boundary-component-to-catch-and-display-initialization-errors-instead-of-showing-blank-page",
+      "title": "Add React error boundary component to catch and display initialization errors instead of showing blank page",
+      "reqIds": [
+        "REQ-32"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-loading-states-and-suspense-boundaries-to-prevent-blank-screens-during-data-fetching-and-route-transitions",
+      "title": "Add loading states and suspense boundaries to prevent blank screens during data fetching and route transitions",
+      "reqIds": [
+        "REQ-33"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-fallback-default-content-for-all-sections-so-pages-render-even-when-backend-connection-fails-or-returns-empty-data",
+      "title": "Add fallback default content for all sections so pages render even when backend connection fails or returns empty data",
+      "reqIds": [
+        "REQ-35"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-react-router-configuration-to-work-correctly-in-internet-computer-deployment-environment-with-proper-route-matching",
+      "title": "Fix React Router configuration to work correctly in Internet Computer deployment environment with proper route matching",
+      "reqIds": [
+        "REQ-36"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-comprehensive-error-handling-and-logging-to-backend-actor-connection-initialization-with-retry-logic",
+      "title": "Add comprehensive error handling and logging to backend actor connection initialization with retry logic",
+      "reqIds": [
+        "REQ-37"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-internet-identity-authentication-flow-to-handle-initialization-errors-gracefully-without-blocking-page-render",
+      "title": "Fix Internet Identity authentication flow to handle initialization errors gracefully without blocking page render",
+      "reqIds": [
+        "REQ-38"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-console-logging-and-diagnostics-throughout-app-initialization-to-help-identify-failure-points-in-deployment",
+      "title": "Add console logging and diagnostics throughout app initialization to help identify failure points in deployment",
+      "reqIds": [
+        "REQ-39"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-all-static-asset-paths-images-css-are-correctly-resolved-relative-to-deployment-base-url",
+      "title": "Ensure all static asset paths (images, CSS) are correctly resolved relative to deployment base URL",
+      "reqIds": [
+        "REQ-40"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-all-occurrences-of-rusy-biogas-system-text-from-the-entire-website-codebase-including-frontend-components-backend-data-structures-and-any-configuration-files",
+      "title": "Remove all occurrences of 'Rusy Biogas System' text from the entire website codebase, including frontend components, backend data structures, and any configuration files",
+      "reqIds": [
+        "REQ-42"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-contact-information-in-the-contact-section-to-display-representative-name-bibhuti-bhusana-mishra-email-bibhuti4011-gmail-com-phone-919437372707-or-9437372707-formatted-appropriately",
+      "title": "Update the contact information in the Contact section to display: Representative Name: 'Bibhuti Bhusana Mishra', Email: 'bibhuti4011@gmail.com', Phone: '+919437372707' (or '9437372707' formatted appropriately)",
+      "reqIds": [
+        "REQ-43"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-admin-contact-editor-contacteditor-component-to-ensure-the-default-values-match-the-new-contact-information-name-bibhuti-bhusana-mishra-email-bibhuti4011-gmail-com-phone-9437372707",
+      "title": "Update the admin contact editor (ContactEditor component) to ensure the default values match the new contact information: name 'Bibhuti Bhusana Mishra', email 'bibhuti4011@gmail.com', phone '9437372707'",
+      "reqIds": [
+        "REQ-44"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-hero-section-component-to-replace-any-biogas-related-welcome-text-with-welcome-to-aparna-millets-as-the-primary-heading-or-tagline",
+      "title": "Update the Hero section component to replace any biogas-related welcome text with 'Welcome to Aparna Millets' as the primary heading or tagline",
+      "reqIds": [
+        "REQ-45"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-update-the-heroeditor-admin-component-to-ensure-the-default-placeholder-values-reference-aparna-millets-instead-of-any-biogas-related-content",
+      "title": "Update the HeroEditor admin component to ensure the default/placeholder values reference Aparna Millets instead of any biogas-related content",
+      "reqIds": [
+        "REQ-47"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-hero-section-component-frontend-src-components-hero-tsx-apply-a-light-black-dark-gray-color-tailwind-class-text-gray-600-or-equivalent-to-the-descriptive-paragraph-text-join-the-millet-revolution-for-sustainable-food-processing-at-aparna-millets-we-are-pioneering-tasty-distributes-of-healthcare-certified-millet-products-and-supporting-smallholders-with-sustainable-trade-contract-farming-and-value-adding-processing-marketplace-innovation-sustainable-cash-crop-support-chemical-free-cultivation-and-healthcare-certified-millet-products-so-it-renders-as-a-softer-dark-gray-rather-than-full-black-or-white",
+      "title": "In the Hero section component (frontend/src/components/Hero.tsx), apply a light black / dark gray color (Tailwind class `text-gray-600` or equivalent) to the descriptive paragraph text: 'Join the Millet Revolution for sustainable food processing. At Aparna Millets, we are pioneering tasty distributes of healthcare-certified millet products and supporting smallholders with sustainable trade, contract farming, and value-adding processing. Marketplace innovation, sustainable cash crop support, chemical-free cultivation, and healthcare-certified millet products.' so it renders as a softer dark gray rather than full black or white.",
+      "reqIds": [
+        "REQ-51"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Multi-section professional company website with Home/Hero, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain Process, Support Requested, and Contact sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Interactive contact form for inquiries from government officials, investors, and customers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Professional design targeting dual audience: government/investors and potential millet product customers",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Admin dashboard with Internet Identity authentication, accessible at /admin route",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Full content management system allowing admins to edit all website sections: Hero/Home, About, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Conclusion, and Contact",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Image upload functionality for admin panel to update visual content across all sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Backend Motoko storage system to persist all content changes made through admin panel",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Build backend Motoko actor methods to store and retrieve complete website content data for all sections: Hero, About Company, Project Vision, Why Rayagada, Technical Specifications, Financial Overview, Social Impact, Market Strategy, Value Chain, Support Requested, Conclusion/Next Steps, and Contact information",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "Fix Vite build configuration to ensure proper asset bundling and base path configuration for Internet Computer deployment",
+      "reqIds": [
+        "REQ-34"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Verify and fix backend canister declarations to ensure frontend can properly communicate with deployed backend",
+      "reqIds": [
+        "REQ-41"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Multi-role order management system with admin (username: Bibhuti, password: Bibhuti@4011), distributor, individual person, and ICDS user types",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Admin dashboard for creating user accounts manually and approving self-registered users (distributors, individuals, ICDS)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Product catalog management system allowing admin to add items with name, image, price, and unit",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Role-based product catalogs and pricing for different user types (distributor, individual, ICDS)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Order placement workflow with pending queue, admin approval/rejection, and monitoring dashboard",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Remove 'Rusy Biogas System' text from website and update contact information to: bibhuti4011@gmail.com, 9437372707, Bibhuti Bhusana Mishra",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-27",
+      "summary": "Update the backend hero section content defaults in backend/main.mo to replace biogas-related text with 'Welcome to Aparna Millets'",
+      "reqIds": [
+        "REQ-46"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-28",
+      "summary": "In the Hero component (frontend/src/components/Hero.tsx), remove the text 'Welcome to our Biogas System — Leading the way in sustainable biogas waste management.' and replace it with 'Aparna Millets'. Ensure the fallback/default content used when backend data is unavailable also reflects 'Aparna Millets' instead of any biogas-related text.",
+      "reqIds": [
+        "REQ-48"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-29",
+      "summary": "Update the backend default hero content in backend/main.mo to ensure the default hero title/description does not contain 'Welcome to our Biogas System' or 'Leading the way in sustainable biogas waste management.' Replace those defaults with 'Aparna Millets' and an appropriate millet-focused subtitle.",
+      "reqIds": [
+        "REQ-49"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-30",
+      "summary": "Update the HeroEditor admin component (frontend/src/components/admin/editors/HeroEditor.tsx) to ensure all placeholder text, default values, and helper labels reference 'Aparna Millets' and contain no biogas-related content.",
+      "reqIds": [
+        "REQ-50"
+      ],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Aparna Natural Millets Producer Co. Ltd. Website",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

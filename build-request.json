@@ -1,0 +1,42 @@
+{
+  "kind": "build_request",
+  "title": "Change hero description paragraph text color to light black (dark gray)",
+  "projectName": "Aparna Millets",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-51",
+      "text": "In the Hero section component (frontend/src/components/Hero.tsx), apply a light black / dark gray color (Tailwind class `text-gray-600` or equivalent) to the descriptive paragraph text: 'Join the Millet Revolution for sustainable food processing. At Aparna Millets, we are pioneering tasty distributes of healthcare-certified millet products and supporting smallholders with sustainable trade, contract farming, and value-adding processing. Marketplace innovation, sustainable cash crop support, chemical-free cultivation, and healthcare-certified millet products.' so it renders as a softer dark gray rather than full black or white.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-recent-4",
+          "msg-recent-5"
+        ],
+        "quotes": [
+          "Join the Millet Revolution for sustainable food processing. At Aparna Millets, we are pioneering tasty distributes of healthcare-certified millet products and supporting smallholders with sustainable trade, contract farming, and value-adding processing. Marketplace innovation, sustainable cash crop support, chemical-free cultivation, and healthcare-certified millet products. make this sentence light black color",
+          "yes"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The descriptive paragraph in the Hero section renders with a light black / dark gray color (e.g., `text-gray-600` or `#4B5563`).",
+        "The text is clearly readable against the hero background.",
+        "No other text elements in the Hero section are unintentionally affected by this color change.",
+        "The fallback/default paragraph text also uses the same dark gray color class."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/hooks/ or frontend/src/components/ui (immutable paths).",
+    "Only change the color styling of the specified paragraph text in the Hero component; do not alter layout, font size, or content."
+  ],
+  "nonGoals": [
+    "Changing colors of any other text elements outside the specified Hero paragraph.",
+    "Modifying backend content or data structures.",
+    "Updating admin panel components."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

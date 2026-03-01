@@ -1,0 +1,25 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-in-the-hero-section-component-frontend-src-components-hero-tsx-apply-a-light-black-dark-gray-color-tailwind-class-text-gray-600-or-equivalent-to-the-descriptive-paragraph-text-join-the-millet-revolution-for-sustainable-food-processing-at-aparna-millets-we-are-pioneering-tasty-distributes-of-healthcare-certified-millet-products-and-supporting-smallholders-with-sustainable-trade-contract-farming-and-value-adding-processing-marketplace-innovation-sustainable-cash-crop-support-chemical-free-cultivation-and-healthcare-certified-millet-products-so-it-renders-as-a-softer-dark-gray-rather-than-full-black-or-white",
+      "featureTitle": "In the Hero section component (frontend/src/components/Hero.tsx), apply a light black / dark gray color (Tailwind class `text-gray-600` or equivalent) to the descriptive paragraph text: 'Join the Millet Revolution for sustainable food processing. At Aparna Millets, we are pioneering tasty distributes of healthcare-certified millet products and supporting smallholders with sustainable trade, contract farming, and value-adding processing. Marketplace innovation, sustainable cash crop support, chemical-free cultivation, and healthcare-certified millet products.' so it renders as a softer dark gray rather than full black or white.",
+      "files": [
+        "frontend/src/components/Hero.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0",
+        "blob-storage@4.0.0"
+      ],
+      "testIds": [
+        "REQ-51"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
